@@ -23,3 +23,5 @@ grow_vertical = 2
 texture = ExtResource("1_cgk1g")
 expand_mode = 3
 stretch_mode = 5
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

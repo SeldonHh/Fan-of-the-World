@@ -11,13 +11,19 @@ config_version=5
 [application]
 
 config/name="Fan Of The World"
+config/description="A small game for the JuniperDev Gamejam, spin a fan to cooldown the planet"
+config/version="0.1"
 run/main_scene="uid://b0wt86gkxk3w2"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://ca13s88hymtha"
 
 [autoload]
 
 Global="*uid://cl06j2yg4a7yw"
+
+[display]
+
+mouse_cursor/custom_image="uid://7gbwt8nswn84"
 
 [gui]
 

@@ -1,7 +1,15 @@
 [gd_scene format=3 uid="uid://b0wt86gkxk3w2"]
 
 [ext_resource type="PackedScene" uid="uid://djgpl8n77rhg2" path="res://Scenes/MainStuff/fan.tscn" id="1_r0vd8"]
-[ext_resource type="Script" uid="uid://dx52yq4mg343x" path="res://Scenes/MainStuff/display_text.gd" id="2_ayn3u"]
+[ext_resource type="PackedScene" uid="uid://wdrhdn6y57f5" path="res://Scenes/Ui/Panel.tscn" id="3_5xgcf"]
+[ext_resource type="Script" uid="uid://dxkqikr7ubbec" path="res://addons/AutoSizeText/ui/AutoSizeRichTextLabel.gd" id="4_n07qj"]
+[ext_resource type="Script" uid="uid://dwhrx03b2c174" path="res://addons/AutoSizeText/ui/AutoSizeLabel.gd" id="4_tewny"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h5xj3"]
+bg_color = Color(0, 0, 0, 0.6392157)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o56tx"]
+bg_color = Color(0.5647147, 0.23894554, 0.80515677, 1)
 
 [node name="Main" type="Control" unique_id=796127526]
 layout_mode = 3
@@ -18,23 +26,72 @@ anchor_left = 0.3
 anchor_top = 0.3
 anchor_right = 0.7
 anchor_bottom = 0.7
+fanning_power = 1000
 
-[node name="DisplayText" type="RichTextLabel" parent="." unique_id=1281004409]
-custom_minimum_size = Vector2(300, 250)
+[node name="NinePatch" parent="." unique_id=1163638001 instance=ExtResource("3_5xgcf")]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.2
-anchor_top = 0.01
+anchor_top = 0.02
 anchor_right = 0.8
-anchor_bottom = 0.2
+anchor_bottom = 0.25
+
+[node name="DisplayText" type="RichTextLabel" parent="NinePatch" unique_id=1415615257]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
-theme_override_constants/line_separation = -20
-theme_override_font_sizes/normal_font_size = 32
+grow_vertical = 2
+theme_override_constants/line_separation = -16
+theme_override_font_sizes/normal_font_size = 21
+theme_override_font_sizes/bold_font_size = 21
+theme_override_font_sizes/bold_italics_font_size = 21
+theme_override_font_sizes/italics_font_size = 21
+theme_override_font_sizes/mono_font_size = 21
 bbcode_enabled = true
-text = "[color=crimson]99.999 Joules[/color] 
+text = "[color=crimson]99.999 Joules[/color]
 [color=beige](52°C)[/color]
 Above regular temperatures"
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("2_ayn3u")
+script = ExtResource("4_n07qj")
+metadata/_custom_type_script = "uid://dxkqikr7ubbec"
+
+[node name="Motivationbar" type="ProgressBar" parent="." unique_id=1434249973]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.02
+anchor_top = 0.7
+anchor_right = 0.08
+anchor_bottom = 0.97
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_h5xj3")
+theme_override_styles/fill = SubResource("StyleBoxFlat_o56tx")
+max_value = 1000.0
+step = 1.0
+value = 10.0
+exp_edit = true
+fill_mode = 3
+show_percentage = false
+
+[node name="AutoSizeLabel" type="Label" parent="Motivationbar" unique_id=2042218558]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.5
+anchor_top = -0.5
+anchor_right = 1.5
+anchor_bottom = -0.2
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 22
+text = "Motivation"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("4_tewny")
+min_font_size = 16
+metadata/_custom_type_script = "uid://dwhrx03b2c174"
