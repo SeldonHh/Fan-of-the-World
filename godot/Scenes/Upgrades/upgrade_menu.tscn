@@ -1,0 +1,133 @@
+[gd_scene format=3 uid="uid://cibonueyndxp2"]
+
+[ext_resource type="Script" uid="uid://ba7itw6nyahvn" path="res://Scenes/Upgrades/upgrade_menu.gd" id="1_8w57b"]
+[ext_resource type="Texture2D" uid="uid://b4xcfd23c8q2i" path="res://Assets/shiii/empty_phone.png" id="1_k02jf"]
+[ext_resource type="PackedScene" uid="uid://cw0moo0bk26g4" path="res://Scenes/Upgrades/upgrade.tscn" id="2_2ax67"]
+[ext_resource type="Texture2D" uid="uid://chup8tfo8qvuq" path="res://Assets/shiii/quit.png" id="3_ehrvl"]
+[ext_resource type="Script" uid="uid://cpi1kgxegrhpl" path="res://Scenes/Upgrades/grid_container.gd" id="3_hjf6i"]
+[ext_resource type="Resource" uid="uid://blwgyvye1eoud" path="res://resource/upgrades/Fanception.tres" id="4_22vox"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ax67"]
+bg_color = Color(0, 0, 0, 0.6156863)
+
+[node name="Upgrade_Menu" type="Control" unique_id=1139010220]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8w57b")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2048416202]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.02
+anchor_right = 1.0
+anchor_bottom = 0.98
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_k02jf")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="GridContainer" type="GridContainer" parent="TextureRect" unique_id=1873031691]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.36805555
+anchor_top = 0.20987654
+anchor_right = 0.6302083
+anchor_bottom = 0.72839504
+columns = 3
+script = ExtResource("3_hjf6i")
+metadata/_edit_use_anchors_ = true
+
+[node name="Upgrade" parent="TextureRect/GridContainer" unique_id=2009925537 instance=ExtResource("2_2ax67")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Upgrade2" parent="TextureRect/GridContainer" unique_id=845009409 instance=ExtResource("2_2ax67")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Upgrade3" parent="TextureRect/GridContainer" unique_id=1150798450 instance=ExtResource("2_2ax67")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Upgrade4" parent="TextureRect/GridContainer" unique_id=1229680437 instance=ExtResource("2_2ax67")]
+layout_mode = 2
+size_flags_vertical = 3
+resource = ExtResource("4_22vox")
+
+[node name="Upgrade5" parent="TextureRect/GridContainer" unique_id=549386242 instance=ExtResource("2_2ax67")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Upgrade6" parent="TextureRect/GridContainer" unique_id=671730936 instance=ExtResource("2_2ax67")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Upgrade7" parent="TextureRect/GridContainer" unique_id=1465495275 instance=ExtResource("2_2ax67")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Upgrade8" parent="TextureRect/GridContainer" unique_id=1837412062 instance=ExtResource("2_2ax67")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Upgrade9" parent="TextureRect/GridContainer" unique_id=851913362 instance=ExtResource("2_2ax67")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Upgrade10" parent="TextureRect/GridContainer" unique_id=1567274686 instance=ExtResource("2_2ax67")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Upgrade11" parent="TextureRect/GridContainer" unique_id=1851992609 instance=ExtResource("2_2ax67")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Upgrade12" parent="TextureRect/GridContainer" unique_id=1916839017 instance=ExtResource("2_2ax67")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Upgrade13" parent="TextureRect/GridContainer" unique_id=32272279 instance=ExtResource("2_2ax67")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Upgrade14" parent="TextureRect/GridContainer" unique_id=232284385 instance=ExtResource("2_2ax67")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Upgrade15" parent="TextureRect/GridContainer" unique_id=492288104 instance=ExtResource("2_2ax67")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Exit" type="TextureButton" parent="TextureRect" unique_id=237361234]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4812639
+anchor_top = 0.7317819
+anchor_right = 0.52220845
+anchor_bottom = 0.80864197
+offset_left = -0.41601563
+offset_top = -0.18688965
+offset_right = 0.4159546
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("3_ehrvl")
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="." unique_id=1597829304]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2ax67")
+
+[connection signal="pressed" from="TextureRect/Exit" to="." method="_on_exit_pressed"]

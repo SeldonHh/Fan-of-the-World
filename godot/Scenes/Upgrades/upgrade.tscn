@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://cw0moo0bk26g4"]
+
+[ext_resource type="Script" uid="uid://bewd14fo3pgqf" path="res://Scenes/Upgrades/upgrade.gd" id="1_ega8d"]
+[ext_resource type="Texture2D" uid="uid://4tmlb66wd425" path="res://Assets/upgrades/placeholder_upgrades.png" id="1_o0w7f"]
+[ext_resource type="Script" uid="uid://dxkqikr7ubbec" path="res://addons/AutoSizeText/ui/AutoSizeRichTextLabel.gd" id="3_fbpm4"]
+[ext_resource type="Resource" uid="uid://b5oaplmavxw6n" path="res://resource/upgrades/Placeholder.tres" id="3_l6ahw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o0w7f"]
+bg_color = Color(0, 0, 0, 0.8627451)
+
+[node name="Upgrade" type="TextureButton" unique_id=2009925537]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("1_o0w7f")
+stretch_mode = 5
+script = ExtResource("1_ega8d")
+resource = ExtResource("3_l6ahw")
+
+[node name="Tooltip" type="Panel" parent="." unique_id=1785049062]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.0
+anchor_top = -2.1
+anchor_right = 2.0
+anchor_bottom = -0.1
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_o0w7f")
+
+[node name="desc" type="RichTextLabel" parent="Tooltip" unique_id=1753664326]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_separation = -20
+theme_override_font_sizes/normal_font_size = 38
+theme_override_font_sizes/bold_font_size = 38
+theme_override_font_sizes/bold_italics_font_size = 38
+theme_override_font_sizes/italics_font_size = 38
+theme_override_font_sizes/mono_font_size = 38
+bbcode_enabled = true
+text = "BLA BLA DESC"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_fbpm4")
+min_font_size = 16
+metadata/_custom_type_script = "uid://dxkqikr7ubbec"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

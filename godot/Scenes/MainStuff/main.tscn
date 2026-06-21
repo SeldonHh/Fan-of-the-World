@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://b0wt86gkxk3w2"]
 
 [ext_resource type="PackedScene" uid="uid://djgpl8n77rhg2" path="res://Scenes/MainStuff/fan.tscn" id="1_r0vd8"]
-[ext_resource type="Texture2D" uid="uid://bnmbwcjhgbpmx" path="res://Assets/Background_no_kb.png" id="1_tewny"]
+[ext_resource type="Texture2D" uid="uid://bnmbwcjhgbpmx" path="res://Assets/shiii/Background_no_kb.png" id="1_tewny"]
 [ext_resource type="PackedScene" uid="uid://wdrhdn6y57f5" path="res://Scenes/Ui/Panel.tscn" id="3_5xgcf"]
 [ext_resource type="Script" uid="uid://dxkqikr7ubbec" path="res://addons/AutoSizeText/ui/AutoSizeRichTextLabel.gd" id="4_n07qj"]
 [ext_resource type="Script" uid="uid://dwhrx03b2c174" path="res://addons/AutoSizeText/ui/AutoSizeLabel.gd" id="4_tewny"]
-[ext_resource type="Texture2D" uid="uid://chfrf4a4w12c0" path="res://Assets/phone.png" id="6_h5xj3"]
+[ext_resource type="Texture2D" uid="uid://chfrf4a4w12c0" path="res://Assets/shiii/phone.png" id="6_h5xj3"]
 [ext_resource type="Script" uid="uid://cs5yjjr82deyl" path="res://Scenes/MainStuff/phone.gd" id="7_o56tx"]
+[ext_resource type="PackedScene" uid="uid://cibonueyndxp2" path="res://Scenes/Upgrades/upgrade_menu.tscn" id="8_fappo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h5xj3"]
 bg_color = Color(0, 0, 0, 0.6392157)
@@ -40,7 +41,6 @@ anchor_left = 0.3
 anchor_top = 0.35
 anchor_right = 0.7
 anchor_bottom = 0.78
-fanning_power = 1000
 
 [node name="NinePatch" parent="." unique_id=1163638001 instance=ExtResource("3_5xgcf")]
 layout_mode = 1
@@ -71,6 +71,7 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_n07qj")
+main_display = true
 metadata/_custom_type_script = "uid://dxkqikr7ubbec"
 
 [node name="Motivationbar" type="ProgressBar" parent="." unique_id=1434249973]
@@ -86,7 +87,6 @@ theme_override_styles/background = SubResource("StyleBoxFlat_h5xj3")
 theme_override_styles/fill = SubResource("StyleBoxFlat_o56tx")
 max_value = 1000.0
 step = 1.0
-value = 10.0
 exp_edit = true
 fill_mode = 3
 show_percentage = false
@@ -148,5 +148,11 @@ text_overrun_behavior = 3
 script = ExtResource("4_tewny")
 min_font_size = 21
 metadata/_custom_type_script = "uid://dwhrx03b2c174"
+
+[node name="Upgrade_Menu" parent="." unique_id=1139010220 instance=ExtResource("8_fappo")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = -1
 
 [connection signal="pressed" from="Phone" to="Phone" method="_on_pressed"]

@@ -6,6 +6,7 @@ var refresh_button: Callable = RequestResizeText
 
 @export_group("Auto Font Size")
 
+@export var main_display := false
 ## Min text size to reach
 @export_range(1, 512, 1.0)
 var min_font_size: int = 8:
@@ -112,7 +113,7 @@ func needs_resize() -> bool:
 	return get_content_height() > get_rect().size.y
 	
 func _process(_delta: float) -> void:
-	if not Engine.is_editor_hint():
+	if not Engine.is_editor_hint() and main_display:
 		self.text = "[color=crimson]%s Joules[/color]
 [color=beige](%s°C or %s°F)[/color]
 Above regular temperatures"%[format_joules(Global.joules),format_celsius(Global.joules),format_farenheit(Global.joules)]

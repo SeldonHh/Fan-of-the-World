@@ -13,30 +13,60 @@ const TEXTURES: Array[Texture2D] = [
 	preload("uid://b4btupw8hm2wm"),
 ]
 @export var base_speed_scale = 1.0
+@export var constant_spinning_base_speed_scale = .1
 var speed_scale = base_speed_scale
 @export var fanning_power = 1
+var constant_spinning_init := false
+
+func _ready() -> void:
+	Global.fan = self
 
 func spin():
 	if !spinning:
-		speed_scale = base_speed_scale + motivationbar.value/100
-		var texture_index = 0
-		spinning = true
-		var timer = get_tree().create_timer(spinning_time)
-		timer.timeout.connect(func(): 
-			while constant_spinning :
-				await get_tree().process_frame
-			spinning = false)
-		while spinning:
-			texture_index = texture_index+1
-			if texture_index >= len(TEXTURES):
-				texture_index = 0
-				Global.lower_joules(fanning_power)
-			fan_texture.texture = TEXTURES[texture_index]
-			await get_tree().create_timer(ANIM_IPS/speed_scale).timeout
-			if !constant_spinning:
-				speed_scale -= .1
+		if constant_spinning:
+			var texture_index = 0
+			if !constant_spinning_init:
+				constant_spinning_init = true
+				speed_scale = constant_spinning_base_speed_scale + motivationbar.value/100
+				while constant_spinning:
+					texture_index = texture_index+1
+					if texture_index >= len(TEXTURES):
+						texture_index = 0
+						Global.lower_joules(fanning_power)
+					fan_texture.texture = TEXTURES[texture_index]
+					await get_tree().create_timer(ANIM_IPS/speed_scale).timeout
 			else:
+				print("hoya")
+				spinning = true
 				speed_scale = base_speed_scale + motivationbar.value/100
+				var timer = get_tree().create_timer(spinning_time)
+				timer.timeout.connect(func(): 
+					spinning = false
+					speed_scale = constant_spinning_base_speed_scale+motivationbar.value/100)
+				while spinning:
+					texture_index = texture_index+1
+					if texture_index >= len(TEXTURES):
+						texture_index = 0
+						Global.lower_joules(fanning_power)
+					fan_texture.texture = TEXTURES[texture_index]
+					await get_tree().create_timer(ANIM_IPS/speed_scale).timeout
+		else:
+			speed_scale = base_speed_scale + motivationbar.value/100
+			var texture_index = 0
+			spinning = true
+			var timer = get_tree().create_timer(spinning_time)
+			timer.timeout.connect(func(): spinning = false)
+			while spinning:
+				texture_index = texture_index+1
+				if texture_index >= len(TEXTURES):
+					texture_index = 0
+					Global.lower_joules(fanning_power)
+				fan_texture.texture = TEXTURES[texture_index]
+				await get_tree().create_timer(ANIM_IPS/speed_scale).timeout
+				if !constant_spinning:
+					speed_scale -= .1
+				else:
+					speed_scale = base_speed_scale + motivationbar.value/100
 
 
 func _process(_delta: float) -> void:

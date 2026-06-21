@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cj4rqvovtmqco"
-path="res://.godot/imported/Fan_Animation.png-7ece43b4cea52bf9712be224e53ef092.ctex"
+uid="uid://b4xcfd23c8q2i"
+path="res://.godot/imported/empty_phone.png-4df4465b7d20d3a2f45ed0972548d058.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Fan_Animation.png"
-dest_files=["res://.godot/imported/Fan_Animation.png-7ece43b4cea52bf9712be224e53ef092.ctex"]
+source_file="res://Assets/shiii/empty_phone.png"
+dest_files=["res://.godot/imported/empty_phone.png-4df4465b7d20d3a2f45ed0972548d058.ctex"]
 
 [params]
 

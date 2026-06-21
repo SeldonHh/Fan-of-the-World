@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://diempk2wxh1s2"
-path="res://.godot/imported/Swantime-Regular.ttf-0260dd5e131717d5eeda2685c9109142.fontdata"
+path="res://.godot/imported/Swantime-Regular.ttf-f174fcfd2c68bdd6992bc8df53861344.fontdata"
 
 [deps]
 
-source_file="res://Assets/Swantime-Regular.ttf"
-dest_files=["res://.godot/imported/Swantime-Regular.ttf-0260dd5e131717d5eeda2685c9109142.fontdata"]
+source_file="res://Assets/shiii/Swantime-Regular.ttf"
+dest_files=["res://.godot/imported/Swantime-Regular.ttf-f174fcfd2c68bdd6992bc8df53861344.fontdata"]
 
 [params]
 

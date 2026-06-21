@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://djgpl8n77rhg2"]
 
 [ext_resource type="Script" uid="uid://bykdk8ig5cbna" path="res://Scenes/MainStuff/fan.gd" id="1_5r4nd"]
-[ext_resource type="Texture2D" uid="uid://diygv6ycq8rmk" path="res://Assets/Fan.png" id="1_cgk1g"]
+[ext_resource type="Texture2D" uid="uid://diygv6ycq8rmk" path="res://Assets/shiii/Fan.png" id="1_cgk1g"]
 
 [node name="Fan" type="Button" unique_id=30920848]
 anchors_preset = 15

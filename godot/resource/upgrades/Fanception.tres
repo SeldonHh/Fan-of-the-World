@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UpgradeResource" format=3 uid="uid://blwgyvye1eoud"]
+
+[ext_resource type="Script" uid="uid://fp67a1888byh" path="res://resource/base/UpgradeBase.gd" id="1_8crtp"]
+[ext_resource type="Texture2D" uid="uid://yinf5hc01g85" path="res://Assets/upgrades/fan_ception.png" id="2_8crtp"]
+
+[resource]
+script = ExtResource("1_8crtp")
+name = "Fanception"
+texture = ExtResource("2_8crtp")
+joules_requirement = 99000
+desc = "Buy fans to blow the fan for you, it's very slow tough"
+metadata/_custom_type_script = "uid://fp67a1888byh"

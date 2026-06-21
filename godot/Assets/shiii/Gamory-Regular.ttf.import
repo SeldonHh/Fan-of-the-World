@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://rmrmjkyn43hx"
-path="res://.godot/imported/Gamory-Regular.ttf-97b5343cfb9307a866a2a37e82eac095.fontdata"
+path="res://.godot/imported/Gamory-Regular.ttf-ca529c8bdbd0075ad295f70dfd7fbacb.fontdata"
 
 [deps]
 
-source_file="res://Assets/Gamory-Regular.ttf"
-dest_files=["res://.godot/imported/Gamory-Regular.ttf-97b5343cfb9307a866a2a37e82eac095.fontdata"]
+source_file="res://Assets/shiii/Gamory-Regular.ttf"
+dest_files=["res://.godot/imported/Gamory-Regular.ttf-ca529c8bdbd0075ad295f70dfd7fbacb.fontdata"]
 
 [params]
 

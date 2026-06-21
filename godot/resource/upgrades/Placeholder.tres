@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UpgradeResource" format=3 uid="uid://b5oaplmavxw6n"]
+
+[ext_resource type="Script" uid="uid://fp67a1888byh" path="res://resource/base/UpgradeBase.gd" id="1_4m1vm"]
+[ext_resource type="Texture2D" uid="uid://dc5gig32hqetc" path="res://Assets/placeholder_upgrades.png" id="2_r5wwj"]
+
+[resource]
+script = ExtResource("1_4m1vm")
+name = "Placeholder"
+texture = ExtResource("2_r5wwj")
+joules_requirement = 99998
+desc = "Welp, you weren't suppose to see that"
+metadata/_custom_type_script = "uid://fp67a1888byh"

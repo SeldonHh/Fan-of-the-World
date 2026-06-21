@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnmbwcjhgbpmx"
-path="res://.godot/imported/Background_no_kb.png-e08304007fd69a020200671efc8fa882.ctex"
+uid="uid://yinf5hc01g85"
+path="res://.godot/imported/fan_ception.png-126b0506cdf9f6835238450653b3b19f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Background_no_kb.png"
-dest_files=["res://.godot/imported/Background_no_kb.png-e08304007fd69a020200671efc8fa882.ctex"]
+source_file="res://Assets/upgrades/fan_ception.png"
+dest_files=["res://.godot/imported/fan_ception.png-126b0506cdf9f6835238450653b3b19f.ctex"]
 
 [params]
 

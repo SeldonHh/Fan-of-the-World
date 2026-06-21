@@ -29,6 +29,14 @@ gdscript/warnings/directory_rules={}
 
 mouse_cursor/custom_image="uid://7gbwt8nswn84"
 
+[file_customization]
+
+folder_colors={
+"res://Assets/": "red",
+"res://Scenes/": "yellow",
+"res://resource/": "green"
+}
+
 [gui]
 
 theme/custom_font="uid://diempk2wxh1s2"
