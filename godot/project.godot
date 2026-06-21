@@ -21,6 +21,10 @@ config/icon="uid://ca13s88hymtha"
 
 Global="*uid://cl06j2yg4a7yw"
 
+[debug]
+
+gdscript/warnings/directory_rules={}
+
 [display]
 
 mouse_cursor/custom_image="uid://7gbwt8nswn84"

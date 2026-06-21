@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://b0wt86gkxk3w2"]
 
 [ext_resource type="PackedScene" uid="uid://djgpl8n77rhg2" path="res://Scenes/MainStuff/fan.tscn" id="1_r0vd8"]
+[ext_resource type="Texture2D" uid="uid://bnmbwcjhgbpmx" path="res://Assets/Background_no_kb.png" id="1_tewny"]
 [ext_resource type="PackedScene" uid="uid://wdrhdn6y57f5" path="res://Scenes/Ui/Panel.tscn" id="3_5xgcf"]
 [ext_resource type="Script" uid="uid://dxkqikr7ubbec" path="res://addons/AutoSizeText/ui/AutoSizeRichTextLabel.gd" id="4_n07qj"]
 [ext_resource type="Script" uid="uid://dwhrx03b2c174" path="res://addons/AutoSizeText/ui/AutoSizeLabel.gd" id="4_tewny"]
+[ext_resource type="Texture2D" uid="uid://chfrf4a4w12c0" path="res://Assets/phone.png" id="6_h5xj3"]
+[ext_resource type="Script" uid="uid://cs5yjjr82deyl" path="res://Scenes/MainStuff/phone.gd" id="7_o56tx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h5xj3"]
 bg_color = Color(0, 0, 0, 0.6392157)
@@ -19,21 +22,32 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="BG" type="TextureRect" parent="." unique_id=471589372]
+z_index = -99
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_tewny")
+expand_mode = 2
+
 [node name="Fan" parent="." unique_id=30920848 instance=ExtResource("1_r0vd8")]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.3
-anchor_top = 0.3
+anchor_top = 0.35
 anchor_right = 0.7
-anchor_bottom = 0.7
+anchor_bottom = 0.78
 fanning_power = 1000
 
 [node name="NinePatch" parent="." unique_id=1163638001 instance=ExtResource("3_5xgcf")]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.2
+anchor_left = 0.3
 anchor_top = 0.02
-anchor_right = 0.8
+anchor_right = 0.7
 anchor_bottom = 0.25
 
 [node name="DisplayText" type="RichTextLabel" parent="NinePatch" unique_id=1415615257]
@@ -44,11 +58,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/line_separation = -16
-theme_override_font_sizes/normal_font_size = 21
-theme_override_font_sizes/bold_font_size = 21
-theme_override_font_sizes/bold_italics_font_size = 21
-theme_override_font_sizes/italics_font_size = 21
-theme_override_font_sizes/mono_font_size = 21
+theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/bold_font_size = 25
+theme_override_font_sizes/bold_italics_font_size = 25
+theme_override_font_sizes/italics_font_size = 25
+theme_override_font_sizes/mono_font_size = 25
 bbcode_enabled = true
 text = "[color=crimson]99.999 Joules[/color]
 [color=beige](52°C)[/color]
@@ -64,9 +78,9 @@ unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.02
-anchor_top = 0.7
+anchor_top = 0.66
 anchor_right = 0.08
-anchor_bottom = 0.97
+anchor_bottom = 0.93
 grow_vertical = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_h5xj3")
 theme_override_styles/fill = SubResource("StyleBoxFlat_o56tx")
@@ -81,11 +95,13 @@ show_percentage = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.5
-anchor_top = -0.5
+anchor_top = 1.02
 anchor_right = 1.5
-anchor_bottom = -0.2
+anchor_bottom = 1.3
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 22
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 21
 text = "Motivation"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -93,5 +109,44 @@ autowrap_mode = 3
 clip_text = true
 text_overrun_behavior = 3
 script = ExtResource("4_tewny")
-min_font_size = 16
+min_font_size = 21
 metadata/_custom_type_script = "uid://dwhrx03b2c174"
+
+[node name="Phone" type="TextureButton" parent="." unique_id=6457363]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.46961805
+anchor_top = 0.7777778
+anchor_right = 0.5329861
+anchor_bottom = 0.97993827
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("6_h5xj3")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("7_o56tx")
+metadata/_edit_use_anchors_ = true
+
+[node name="AutoSizeLabel" type="Label" parent="Phone" unique_id=1952380635]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.5
+anchor_top = 0.2
+anchor_right = -0.1
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_constants/line_spacing = -28
+theme_override_font_sizes/font_size = 22
+text = "Click for upgrades"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("4_tewny")
+min_font_size = 21
+metadata/_custom_type_script = "uid://dwhrx03b2c174"
+
+[connection signal="pressed" from="Phone" to="Phone" method="_on_pressed"]

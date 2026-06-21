@@ -112,7 +112,8 @@ func needs_resize() -> bool:
 	return get_content_height() > get_rect().size.y
 	
 func _process(_delta: float) -> void:
-	self.text = "[color=crimson]%s Joules[/color]
+	if not Engine.is_editor_hint():
+		self.text = "[color=crimson]%s Joules[/color]
 [color=beige](%s°C or %s°F)[/color]
 Above regular temperatures"%[format_joules(Global.joules),format_celsius(Global.joules),format_farenheit(Global.joules)]
 
