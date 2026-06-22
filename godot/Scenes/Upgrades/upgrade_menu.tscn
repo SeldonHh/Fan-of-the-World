@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://cpi1kgxegrhpl" path="res://Scenes/Upgrades/grid_container.gd" id="3_hjf6i"]
 [ext_resource type="Resource" uid="uid://blwgyvye1eoud" path="res://resource/upgrades/Fanception.tres" id="4_22vox"]
 [ext_resource type="Resource" uid="uid://jpw5a3jepug1" path="res://resource/upgrades/StrongerSpin.tres" id="5_52241"]
+[ext_resource type="Resource" uid="uid://dhmigdxn4ul21" path="res://resource/upgrades/Improved Blades.tres" id="6_68etm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ax67"]
 bg_color = Color(0, 0, 0, 0.6156863)
@@ -51,6 +52,7 @@ resource = ExtResource("5_52241")
 [node name="Upgrade2" parent="TextureRect/GridContainer" unique_id=845009409 instance=ExtResource("2_2ax67")]
 layout_mode = 2
 size_flags_vertical = 3
+resource = ExtResource("6_68etm")
 
 [node name="Upgrade3" parent="TextureRect/GridContainer" unique_id=1150798450 instance=ExtResource("2_2ax67")]
 layout_mode = 2

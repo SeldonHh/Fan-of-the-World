@@ -16,10 +16,18 @@ const TEXTURES: Array[Texture2D] = [
 @export var constant_spinning_base_speed_scale = .2
 var speed_scale = base_speed_scale
 @export var fanning_power = 1
+var fanning_power_bonus := 1
 var spin_generation := 0
 var boost_until: float = 0.0
 var constant_spin_running := false
 var texture_index := 0
+
+func add_power(amount):
+	fanning_power += fanning_power_bonus * amount
+
+func add_bonus_power(amount):
+	fanning_power *= amount
+	fanning_power_bonus += amount-1
 
 func _ready() -> void:
 	Global.fan = self
@@ -50,7 +58,11 @@ func spin():
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("Debug"):
+		var temp = fanning_power
+		add_power(1000)
 		spin()
+		await get_tree().create_timer(spinning_time).timeout
+		fanning_power = temp 
 	if Input.is_action_just_pressed("debug2"):
 		constant_spinning = !constant_spinning
 		start_constant_spin()
@@ -74,3 +86,4 @@ func start_constant_spin():
 			Global.lower_joules(fanning_power)
 		fan_texture.texture = TEXTURES[texture_index]
 		await get_tree().create_timer(ANIM_IPS/speed_scale).timeout
+	constant_spin_running = false

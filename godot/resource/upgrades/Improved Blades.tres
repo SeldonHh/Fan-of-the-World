@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="UpgradeResource" format=3 uid="uid://dhmigdxn4ul21"]
+
+[ext_resource type="Script" uid="uid://fp67a1888byh" path="res://resource/base/UpgradeBase.gd" id="1_vhtup"]
+[ext_resource type="Texture2D" uid="uid://drivjk2ulbhyd" path="res://Assets/upgrades/blades.png" id="2_vhtup"]
+
+[resource]
+script = ExtResource("1_vhtup")
+name = "Improved Blades"
+texture = ExtResource("2_vhtup")
+joules_requirement = 99950
+desc = "The blades blow more air, it's more efficient"
+cost = 20
+metadata/_custom_type_script = "uid://fp67a1888byh"
