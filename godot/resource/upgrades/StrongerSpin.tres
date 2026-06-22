@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UpgradeResource" format=3 uid="uid://jpw5a3jepug1"]
+
+[ext_resource type="Script" uid="uid://fp67a1888byh" path="res://resource/base/UpgradeBase.gd" id="1_d1ewu"]
+[ext_resource type="Texture2D" uid="uid://l8j2g12lw30v" path="res://Assets/upgrades/fist.png" id="2_d1ewu"]
+
+[resource]
+script = ExtResource("1_d1ewu")
+name = "Stronger Spin"
+texture = ExtResource("2_d1ewu")
+joules_requirement = 99980
+desc = "Your spin are stronger, and thus last longer"
+metadata/_custom_type_script = "uid://fp67a1888byh"

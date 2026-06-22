@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://chup8tfo8qvuq" path="res://Assets/shiii/quit.png" id="3_ehrvl"]
 [ext_resource type="Script" uid="uid://cpi1kgxegrhpl" path="res://Scenes/Upgrades/grid_container.gd" id="3_hjf6i"]
 [ext_resource type="Resource" uid="uid://blwgyvye1eoud" path="res://resource/upgrades/Fanception.tres" id="4_22vox"]
+[ext_resource type="Resource" uid="uid://jpw5a3jepug1" path="res://resource/upgrades/StrongerSpin.tres" id="5_52241"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ax67"]
 bg_color = Color(0, 0, 0, 0.6156863)
@@ -45,6 +46,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Upgrade" parent="TextureRect/GridContainer" unique_id=2009925537 instance=ExtResource("2_2ax67")]
 layout_mode = 2
 size_flags_vertical = 3
+resource = ExtResource("5_52241")
 
 [node name="Upgrade2" parent="TextureRect/GridContainer" unique_id=845009409 instance=ExtResource("2_2ax67")]
 layout_mode = 2

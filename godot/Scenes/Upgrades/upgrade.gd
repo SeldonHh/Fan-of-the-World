@@ -14,14 +14,16 @@ func update_self():
 	desc.text = "[b]%s[/b]
 	%s"%[resource.name,resource.desc]
 	desc.text += "
-	[font_size=16] requirement: %s Joules"%resource.joules_requirement
+	[font_size=20] requirement: %s Joules"%resource.joules_requirement
 
 func _on_pressed() -> void:
-	if Global.joules < resource.joules_requirement and self.resource != placeholder:
+	if Global.joules <= resource.joules_requirement and self.resource != placeholder:
 		match resource.name:
 			"Fanception": 
 				Global.fan.constant_spinning = true
 				Global.fan.spin()
+			"Stronger Spin":
+				Global.fan.spinning_time += .3
 		self.resource = placeholder
 		tooltip.hide()
 		update_self()
