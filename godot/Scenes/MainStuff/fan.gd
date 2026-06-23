@@ -74,7 +74,7 @@ func _process(_delta: float) -> void:
 	""""""
 	if Input.is_action_just_pressed("Debug"):
 		var temp = fanning_power
-		add_power(999998)
+		add_power(50000)
 		Global.motivation.add_motivation(0)
 		spin()
 		await get_tree().create_timer(spinning_time).timeout
@@ -99,6 +99,7 @@ func _on_pressed() -> void:
 func crit(amount):
 	var label = AutoSizeRichTextLabel.new()
 	label.bbcode_enabled = true
+	label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	label.text = '[b][color=yellow]CRIT!
 -%s Joules'%amount
 	label.position = Vector2(randf_range(position.x,position.x-size.x),randf_range(position.y,position.y-size.y))
@@ -108,7 +109,7 @@ func crit(amount):
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	self.add_child(label)
-	await get_tree().create_timer(.5).timeout
+	await get_tree().create_timer(5).timeout
 	label.queue_free()
 
 func start_constant_spin():

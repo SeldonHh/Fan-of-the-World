@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://cj4rqvovtmqco" path="res://Assets/shiii/Fan_Animation.png" id="13_b6kj8"]
 [ext_resource type="Script" uid="uid://damf03v4fsl3m" path="res://Scenes/MainStuff/wheel.gd" id="14_swcbe"]
 [ext_resource type="Script" uid="uid://cokjdr6q7r0ov" path="res://Scenes/MainStuff/option.gd" id="15_swcbe"]
+[ext_resource type="Texture2D" uid="uid://dhtl828ps4esi" path="res://Assets/shiii/pen.png" id="16_qyqbn"]
+[ext_resource type="Script" uid="uid://dhsnh3gxnckk3" path="res://Scenes/MainStuff/pen.gd" id="17_6bhj2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h5xj3"]
 bg_color = Color(0, 0, 0, 0.6392157)
@@ -255,6 +257,7 @@ script = ExtResource("14_swcbe")
 metadata/_edit_use_anchors_ = true
 
 [node name="Option" type="Panel" parent="." unique_id=1782741224]
+visible = false
 z_index = 10
 layout_mode = 1
 anchors_preset = 15
@@ -303,5 +306,20 @@ script = ExtResource("4_tewny")
 metadata/_custom_type_script = "uid://dwhrx03b2c174"
 metadata/_edit_use_anchors_ = true
 
+[node name="Pen" type="TextureButton" parent="." unique_id=1977027622]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.201
+anchor_top = 0.77900004
+anchor_right = 0.30600002
+anchor_bottom = 0.96500003
+offset_left = 0.44799805
+offset_top = 0.2079773
+offset_right = -0.5120239
+offset_bottom = -0.32000732
+texture_normal = ExtResource("16_qyqbn")
+script = ExtResource("17_6bhj2")
+
 [connection signal="pressed" from="Motivationbar/MotivationButton" to="Motivationbar" method="_on_button_pressed"]
 [connection signal="pressed" from="Phone" to="Phone" method="_on_pressed"]
+[connection signal="pressed" from="Pen" to="Pen" method="_on_pressed"]
