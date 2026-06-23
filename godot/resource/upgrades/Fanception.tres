@@ -7,7 +7,7 @@
 script = ExtResource("1_8crtp")
 name = "Fanception"
 texture = ExtResource("2_8crtp")
-joules_requirement = 99000
+joules_requirement = 99333
 desc = "Buy fans to blow the fan for you, it's very slow tough"
 cost = 100
 metadata/_custom_type_script = "uid://fp67a1888byh"

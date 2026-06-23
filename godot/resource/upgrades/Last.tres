@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="UpgradeResource" format=3 uid="uid://dyp20vvny8yjf"]
+
+[ext_resource type="Script" uid="uid://fp67a1888byh" path="res://resource/base/UpgradeBase.gd" id="1_763ro"]
+[ext_resource type="Texture2D" uid="uid://b30526vcu1gbr" path="res://Assets/upgrades/stamina.png" id="2_763ro"]
+
+[resource]
+script = ExtResource("1_763ro")
+name = "Fast Boi"
+texture = ExtResource("2_763ro")
+joules_requirement = 25000
+desc = "Imrpove the base spinning time and base speed of the fan"
+cost = 10000
+metadata/_custom_type_script = "uid://fp67a1888byh"

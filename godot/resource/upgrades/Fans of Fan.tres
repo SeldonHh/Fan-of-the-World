@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="UpgradeResource" format=3 uid="uid://dcupmxnvtmg0k"]
+
+[ext_resource type="Script" uid="uid://fp67a1888byh" path="res://resource/base/UpgradeBase.gd" id="1_fya2p"]
+[ext_resource type="Texture2D" uid="uid://dq7sr2f5kfen6" path="res://Assets/upgrades/LotOfFans.png" id="2_fya2p"]
+
+[resource]
+script = ExtResource("1_fya2p")
+name = "Fans of Fan"
+texture = ExtResource("2_fya2p")
+joules_requirement = 96000
+desc = "Each turn gets you more groupies, you'll slowly build an empire of fans"
+cost = 1000
+metadata/_custom_type_script = "uid://fp67a1888byh"

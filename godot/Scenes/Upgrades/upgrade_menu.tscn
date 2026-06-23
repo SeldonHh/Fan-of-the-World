@@ -8,6 +8,15 @@
 [ext_resource type="Resource" uid="uid://blwgyvye1eoud" path="res://resource/upgrades/Fanception.tres" id="4_22vox"]
 [ext_resource type="Resource" uid="uid://jpw5a3jepug1" path="res://resource/upgrades/StrongerSpin.tres" id="5_52241"]
 [ext_resource type="Resource" uid="uid://dhmigdxn4ul21" path="res://resource/upgrades/Improved Blades.tres" id="6_68etm"]
+[ext_resource type="Resource" uid="uid://0cw3bdax6rog" path="res://resource/upgrades/Marketing Campaign.tres" id="7_2smoi"]
+[ext_resource type="Resource" uid="uid://bbsr0kf3ayfwe" path="res://resource/upgrades/GettingMoreFans.tres" id="7_bm3u7"]
+[ext_resource type="Resource" uid="uid://dff4nhpauing3" path="res://resource/upgrades/Titanium Blades.tres" id="7_ht33h"]
+[ext_resource type="Resource" uid="uid://ekj8aodw48nd" path="res://resource/upgrades/Atom Splitting.tres" id="11_3olpl"]
+[ext_resource type="Resource" uid="uid://dcupmxnvtmg0k" path="res://resource/upgrades/Fans of Fan.tres" id="12_mgw2c"]
+[ext_resource type="Resource" uid="uid://c21o7f50busi4" path="res://resource/upgrades/Precision Spin.tres" id="13_vtrjw"]
+[ext_resource type="Resource" uid="uid://ceyre68fihfeo" path="res://resource/upgrades/Healthy Community.tres" id="14_rrq43"]
+[ext_resource type="Resource" uid="uid://dyp20vvny8yjf" path="res://resource/upgrades/Last.tres" id="16_nopyu"]
+[ext_resource type="Resource" uid="uid://d2y300uoardf5" path="res://resource/upgrades/Child Labor.tres" id="16_qw470"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ax67"]
 bg_color = Color(0, 0, 0, 0.6156863)
@@ -34,6 +43,7 @@ expand_mode = 3
 stretch_mode = 5
 
 [node name="GridContainer" type="GridContainer" parent="TextureRect" unique_id=1873031691]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.36805555
@@ -57,43 +67,52 @@ resource = ExtResource("6_68etm")
 [node name="Upgrade3" parent="TextureRect/GridContainer" unique_id=1150798450 instance=ExtResource("2_2ax67")]
 layout_mode = 2
 size_flags_vertical = 3
+resource = ExtResource("7_2smoi")
 
 [node name="Upgrade4" parent="TextureRect/GridContainer" unique_id=1229680437 instance=ExtResource("2_2ax67")]
 layout_mode = 2
 size_flags_vertical = 3
-resource = ExtResource("4_22vox")
+resource = ExtResource("7_bm3u7")
 
 [node name="Upgrade5" parent="TextureRect/GridContainer" unique_id=549386242 instance=ExtResource("2_2ax67")]
 layout_mode = 2
 size_flags_vertical = 3
+resource = ExtResource("4_22vox")
 
 [node name="Upgrade6" parent="TextureRect/GridContainer" unique_id=671730936 instance=ExtResource("2_2ax67")]
 layout_mode = 2
 size_flags_vertical = 3
+resource = ExtResource("7_ht33h")
 
 [node name="Upgrade7" parent="TextureRect/GridContainer" unique_id=1465495275 instance=ExtResource("2_2ax67")]
 layout_mode = 2
 size_flags_vertical = 3
+resource = ExtResource("11_3olpl")
 
 [node name="Upgrade8" parent="TextureRect/GridContainer" unique_id=1837412062 instance=ExtResource("2_2ax67")]
 layout_mode = 2
 size_flags_vertical = 3
+resource = ExtResource("12_mgw2c")
 
 [node name="Upgrade9" parent="TextureRect/GridContainer" unique_id=851913362 instance=ExtResource("2_2ax67")]
 layout_mode = 2
 size_flags_vertical = 3
+resource = ExtResource("14_rrq43")
 
 [node name="Upgrade10" parent="TextureRect/GridContainer" unique_id=1567274686 instance=ExtResource("2_2ax67")]
 layout_mode = 2
 size_flags_vertical = 3
+resource = ExtResource("13_vtrjw")
 
 [node name="Upgrade11" parent="TextureRect/GridContainer" unique_id=1851992609 instance=ExtResource("2_2ax67")]
 layout_mode = 2
 size_flags_vertical = 3
+resource = ExtResource("16_qw470")
 
 [node name="Upgrade12" parent="TextureRect/GridContainer" unique_id=1916839017 instance=ExtResource("2_2ax67")]
 layout_mode = 2
 size_flags_vertical = 3
+resource = ExtResource("16_nopyu")
 
 [node name="Upgrade13" parent="TextureRect/GridContainer" unique_id=32272279 instance=ExtResource("2_2ax67")]
 layout_mode = 2

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="UpgradeResource" format=3 uid="uid://bbsr0kf3ayfwe"]
+
+[ext_resource type="Script" uid="uid://fp67a1888byh" path="res://resource/base/UpgradeBase.gd" id="1_1jwtg"]
+[ext_resource type="Texture2D" uid="uid://df4vmu53pg2w7" path="res://Assets/upgrades/LotOfFans2.png" id="2_1jwtg"]
+
+[resource]
+script = ExtResource("1_1jwtg")
+name = "Getting More Fans"
+texture = ExtResource("2_1jwtg")
+joules_requirement = 99500
+desc = "Clicking the motivation bar earns you +1 fan"
+cost = 100
+metadata/_custom_type_script = "uid://fp67a1888byh"

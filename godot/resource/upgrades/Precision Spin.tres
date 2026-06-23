@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="UpgradeResource" format=3 uid="uid://c21o7f50busi4"]
+
+[ext_resource type="Script" uid="uid://fp67a1888byh" path="res://resource/base/UpgradeBase.gd" id="1_dltro"]
+[ext_resource type="Texture2D" uid="uid://dk6m2rd1ghcc4" path="res://Assets/upgrades/crit.png" id="2_dltro"]
+
+[resource]
+script = ExtResource("1_dltro")
+name = "Precision Spin"
+texture = ExtResource("2_dltro")
+joules_requirement = 85555
+desc = "The blades are now very precise, when they crit, they crit hard, really hard"
+cost = 2000
+metadata/_custom_type_script = "uid://fp67a1888byh"

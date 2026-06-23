@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="UpgradeResource" format=3 uid="uid://banpph28efjts"]
+
+[ext_resource type="Script" uid="uid://fp67a1888byh" path="res://resource/base/UpgradeBase.gd" id="1_j44wl"]
+[ext_resource type="Texture2D" uid="uid://8m1wpl3l2aj4" path="res://Assets/upgrades/no_child.png" id="2_j44wl"]
+
+[resource]
+script = ExtResource("1_j44wl")
+name = "Stop Child Labor"
+texture = ExtResource("2_j44wl")
+joules_requirement = 50000
+desc = "It might have been a mistake huh"
+cost = 5000
+metadata/_custom_type_script = "uid://fp67a1888byh"

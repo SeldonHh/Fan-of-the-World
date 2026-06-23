@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="UpgradeResource" format=3 uid="uid://ekj8aodw48nd"]
+
+[ext_resource type="Script" uid="uid://fp67a1888byh" path="res://resource/base/UpgradeBase.gd" id="1_hggfr"]
+[ext_resource type="Texture2D" uid="uid://divysfy676b8" path="res://Assets/upgrades/atoms.png" id="2_hggfr"]
+
+[resource]
+script = ExtResource("1_hggfr")
+name = "Atom Splitting"
+texture = ExtResource("2_hggfr")
+joules_requirement = 98500
+desc = "Gain a 10% chance to crit on each spin lowering the temperature by 10x more"
+cost = 300
+metadata/_custom_type_script = "uid://fp67a1888byh"

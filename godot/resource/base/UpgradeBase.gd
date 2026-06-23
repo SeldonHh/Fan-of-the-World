@@ -6,3 +6,4 @@ class_name UpgradeResource
 @export var joules_requirement : int
 @export var desc : String
 @export var cost : int = 0
+@export var override_replacement : UpgradeResource = null

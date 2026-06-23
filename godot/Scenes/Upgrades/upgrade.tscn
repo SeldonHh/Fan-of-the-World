@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://4tmlb66wd425" path="res://Assets/upgrades/placeholder_upgrades.png" id="1_o0w7f"]
 [ext_resource type="Script" uid="uid://dxkqikr7ubbec" path="res://addons/AutoSizeText/ui/AutoSizeRichTextLabel.gd" id="3_fbpm4"]
 [ext_resource type="Resource" uid="uid://b5oaplmavxw6n" path="res://resource/upgrades/Placeholder.tres" id="3_l6ahw"]
+[ext_resource type="Texture2D" uid="uid://bwjyhqhg3ema4" path="res://Assets/shiii/ATTENTION.png" id="5_w4l7t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o0w7f"]
 bg_color = Color(0, 0, 0, 0.8627451)
@@ -53,6 +54,25 @@ vertical_alignment = 1
 script = ExtResource("3_fbpm4")
 min_font_size = 16
 metadata/_custom_type_script = "uid://dxkqikr7ubbec"
+
+[node name="ATTENTION" type="TextureRect" parent="." unique_id=1807824459]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.55967367
+anchor_top = -0.21648148
+anchor_right = 0.8950208
+anchor_bottom = 0.38006172
+offset_left = 0.2559204
+offset_top = 0.27999973
+offset_right = -0.06402588
+offset_bottom = -0.27999878
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_w4l7t")
+expand_mode = 3
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -3,6 +3,9 @@ extends TextureButton
 
 @onready var upgrade_menu: Control = %Upgrade_Menu
 
+func _ready() -> void:
+	Global.phone = self
+
 func _on_pressed() -> void:
 	upgrade_menu.show()
 	auto_size_label.hide()

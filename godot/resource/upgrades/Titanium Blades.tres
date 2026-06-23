@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="UpgradeResource" format=3 uid="uid://dff4nhpauing3"]
+
+[ext_resource type="Script" uid="uid://fp67a1888byh" path="res://resource/base/UpgradeBase.gd" id="1_rgbfu"]
+[ext_resource type="Texture2D" uid="uid://gd71ucxds175" path="res://Assets/upgrades/strong_blades.png" id="2_rgbfu"]
+
+[resource]
+script = ExtResource("1_rgbfu")
+name = "Titanium Blades"
+texture = ExtResource("2_rgbfu")
+joules_requirement = 99000
+desc = "The blades are now titanium, you're not sure why but it definitly blows more wind"
+cost = 300
+metadata/_custom_type_script = "uid://fp67a1888byh"

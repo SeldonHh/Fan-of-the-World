@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="UpgradeResource" format=3 uid="uid://d2y300uoardf5"]
+
+[ext_resource type="Script" uid="uid://fp67a1888byh" path="res://resource/base/UpgradeBase.gd" id="1_0tjxv"]
+[ext_resource type="Resource" uid="uid://banpph28efjts" path="res://resource/upgrades/Stop_Child_Labor.tres" id="1_87lyc"]
+[ext_resource type="Texture2D" uid="uid://cjlebk0uxialn" path="res://Assets/upgrades/child.png" id="3_87lyc"]
+
+[resource]
+script = ExtResource("1_0tjxv")
+name = "Child Labor"
+texture = ExtResource("3_87lyc")
+joules_requirement = 60000
+desc = "The fan gets more powerful, but you don't get a lot of new fans with this"
+override_replacement = ExtResource("1_87lyc")
+metadata/_custom_type_script = "uid://fp67a1888byh"
