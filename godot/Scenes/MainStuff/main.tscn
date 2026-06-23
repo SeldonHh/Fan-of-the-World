@@ -72,6 +72,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mhwg1")
 
+[node name="Timer" type="Timer" parent="." unique_id=1497873506]
+wait_time = 30.0
+autostart = true
+
 [node name="BG" type="TextureRect" parent="." unique_id=471589372]
 z_index = -99
 layout_mode = 1
@@ -320,6 +324,7 @@ offset_bottom = -0.32000732
 texture_normal = ExtResource("16_qyqbn")
 script = ExtResource("17_6bhj2")
 
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="Motivationbar/MotivationButton" to="Motivationbar" method="_on_button_pressed"]
 [connection signal="pressed" from="Phone" to="Phone" method="_on_pressed"]
 [connection signal="pressed" from="Pen" to="Pen" method="_on_pressed"]
