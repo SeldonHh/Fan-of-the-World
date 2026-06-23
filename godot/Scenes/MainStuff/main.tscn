@@ -11,12 +11,51 @@
 [ext_resource type="Script" uid="uid://cs5yjjr82deyl" path="res://Scenes/MainStuff/phone.gd" id="7_o56tx"]
 [ext_resource type="PackedScene" uid="uid://cibonueyndxp2" path="res://Scenes/Upgrades/upgrade_menu.tscn" id="8_fappo"]
 [ext_resource type="AudioStream" uid="uid://4cq7sjpxwejh" path="res://Assets/shiii/song.ogg" id="11_4e1qo"]
+[ext_resource type="Script" uid="uid://bsp5p57tuq0ci" path="res://Scenes/MainStuff/audio_stream_player.gd" id="12_txtry"]
+[ext_resource type="Texture2D" uid="uid://cj4rqvovtmqco" path="res://Assets/shiii/Fan_Animation.png" id="13_b6kj8"]
+[ext_resource type="Script" uid="uid://damf03v4fsl3m" path="res://Scenes/MainStuff/wheel.gd" id="14_swcbe"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h5xj3"]
 bg_color = Color(0, 0, 0, 0.6392157)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o56tx"]
 bg_color = Color(0.5647147, 0.23894554, 0.80515677, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qyqbn"]
+atlas = ExtResource("13_b6kj8")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bhj2"]
+atlas = ExtResource("13_b6kj8")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_acqp8"]
+atlas = ExtResource("13_b6kj8")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbaa3"]
+atlas = ExtResource("13_b6kj8")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xsi4l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qyqbn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6bhj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_acqp8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cbaa3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 16.0
+}]
 
 [node name="Main" type="Control" unique_id=796127526]
 layout_mode = 3
@@ -199,8 +238,18 @@ anchors_preset = -1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=350014480]
 stream = ExtResource("11_4e1qo")
-volume_db = -10.0
 autoplay = true
+parameters/looping = true
+script = ExtResource("12_txtry")
+
+[node name="Wheel" type="AnimatedSprite2D" parent="." unique_id=446491232]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(1096, 696)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_xsi4l")
+frame_progress = 0.3982932
+script = ExtResource("14_swcbe")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Motivationbar/MotivationButton" to="Motivationbar" method="_on_button_pressed"]
 [connection signal="pressed" from="Phone" to="Phone" method="_on_pressed"]
