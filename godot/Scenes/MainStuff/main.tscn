@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://chfrf4a4w12c0" path="res://Assets/shiii/phone.png" id="6_h5xj3"]
 [ext_resource type="Script" uid="uid://cs5yjjr82deyl" path="res://Scenes/MainStuff/phone.gd" id="7_o56tx"]
 [ext_resource type="PackedScene" uid="uid://cibonueyndxp2" path="res://Scenes/Upgrades/upgrade_menu.tscn" id="8_fappo"]
+[ext_resource type="AudioStream" uid="uid://4cq7sjpxwejh" path="res://Assets/shiii/song.ogg" id="11_4e1qo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h5xj3"]
 bg_color = Color(0, 0, 0, 0.6392157)
@@ -195,6 +196,11 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 1
 anchors_preset = -1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=350014480]
+stream = ExtResource("11_4e1qo")
+volume_db = -10.0
+autoplay = true
 
 [connection signal="pressed" from="Motivationbar/MotivationButton" to="Motivationbar" method="_on_button_pressed"]
 [connection signal="pressed" from="Phone" to="Phone" method="_on_pressed"]
