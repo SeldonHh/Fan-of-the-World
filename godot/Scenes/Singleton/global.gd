@@ -11,4 +11,9 @@ func lower_joules(amount):
 		end()
 
 func end():
+	meta_game_complete("Seldon/FanOfTheWorld")
 	fan.stop()
+
+func meta_game_complete(gameId: String) -> void:
+	if OS.has_feature("web"):
+		JavaScriptBridge.eval("localStorage.setItem(\"%s\", new Date().toJSON());" % gameId)
