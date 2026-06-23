@@ -1,10 +1,10 @@
 extends AudioStreamPlayer
 
-var og_volume := -10.0
 func _ready() -> void:
+	volume_db = (log((Global.volume)/100.0)*20)-15
+	play()
 	if "debug" in OS.get_cmdline_args():
-		playing = false
-	og_volume = volume_db
+		playing = true
+
 func _process(_delta: float) -> void:
-	
-	volume_db = og_volume * (Global.volume/100.0)
+	volume_db = (log((Global.volume)/100.0)*20)-15

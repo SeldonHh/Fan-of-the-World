@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://bsp5p57tuq0ci" path="res://Scenes/MainStuff/audio_stream_player.gd" id="12_txtry"]
 [ext_resource type="Texture2D" uid="uid://cj4rqvovtmqco" path="res://Assets/shiii/Fan_Animation.png" id="13_b6kj8"]
 [ext_resource type="Script" uid="uid://damf03v4fsl3m" path="res://Scenes/MainStuff/wheel.gd" id="14_swcbe"]
+[ext_resource type="Script" uid="uid://cokjdr6q7r0ov" path="res://Scenes/MainStuff/option.gd" id="15_swcbe"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h5xj3"]
 bg_color = Color(0, 0, 0, 0.6392157)
@@ -56,6 +57,9 @@ animations = [{
 "name": &"default",
 "speed": 16.0
 }]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b6kj8"]
+bg_color = Color(0, 0, 0, 0.8784314)
 
 [node name="Main" type="Control" unique_id=796127526]
 layout_mode = 3
@@ -238,7 +242,6 @@ anchors_preset = -1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=350014480]
 stream = ExtResource("11_4e1qo")
-autoplay = true
 parameters/looping = true
 script = ExtResource("12_txtry")
 
@@ -249,6 +252,55 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_xsi4l")
 frame_progress = 0.3982932
 script = ExtResource("14_swcbe")
+metadata/_edit_use_anchors_ = true
+
+[node name="Option" type="Panel" parent="." unique_id=1782741224]
+z_index = 10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_b6kj8")
+script = ExtResource("15_swcbe")
+
+[node name="HSlider" type="HSlider" parent="Option" unique_id=755653913]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -145.0
+offset_top = -8.0
+offset_right = 145.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 100.0
+
+[node name="AutoSizeLabel" type="Label" parent="Option" unique_id=701656006]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.44133335
+anchor_top = 0.38258028
+anchor_right = 0.5690834
+anchor_bottom = 0.44458026
+offset_left = -0.41601563
+offset_top = 0.08798218
+offset_right = 0.4159546
+offset_bottom = -0.088012695
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 22
+text = "Music"
+horizontal_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("4_tewny")
+metadata/_custom_type_script = "uid://dwhrx03b2c174"
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Motivationbar/MotivationButton" to="Motivationbar" method="_on_button_pressed"]
