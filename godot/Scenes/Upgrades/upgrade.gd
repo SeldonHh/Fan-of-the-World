@@ -6,8 +6,8 @@ var placeholder = preload("uid://b5oaplmavxw6n")
 @onready var attention: TextureRect = $ATTENTION
 
 @onready var desc: AutoSizeRichTextLabel = $Tooltip/desc
-var seen := false
-
+@export var seen := false
+@export var desc_only := false
 func _ready() -> void:
 	update_self()
 
@@ -15,9 +15,10 @@ func update_self():
 	self.texture_normal = resource.texture
 	desc.text = "[b]%s[/b]
 	%s"%[resource.name,resource.desc]
-	desc.text += "
-	[i]requirement: %s Joules
-	heats the atmosphere by %s Joules"%[resource.joules_requirement,resource.cost]
+	if !desc_only:
+		desc.text += "
+[i]requirement: %s Joules
+heats the atmosphere by %s Joules"%[resource.joules_requirement,resource.cost]
 
 func _on_pressed() -> void:
 	if Global.joules <= resource.joules_requirement and self.resource != placeholder:
@@ -54,6 +55,7 @@ func _on_pressed() -> void:
 				Global.fan.constant_spinning_base_speed_scale *= 2
 				Global.fan.spinning_time *= 2
 		Global.lower_joules(-resource.cost)
+		Global.upgrade_menu.is_bought(resource)
 		if resource.override_replacement == null:
 			self.resource = placeholder
 		else:

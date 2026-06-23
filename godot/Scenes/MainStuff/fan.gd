@@ -71,7 +71,7 @@ func spin():
 
 
 func _process(_delta: float) -> void:
-	"""
+	""""""
 	if Input.is_action_just_pressed("Debug"):
 		var temp = fanning_power
 		add_power(40000)
@@ -82,7 +82,7 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("debug2"):
 		constant_spinning = !constant_spinning
 		start_constant_spin()
-	"""
+	
 	if motivation_on_crit_chance:
 		actual_crit_chance = crit_chance*(1+Global.motivation.value/100)
 	else:

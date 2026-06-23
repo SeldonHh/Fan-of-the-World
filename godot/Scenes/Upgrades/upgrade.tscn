@@ -23,6 +23,7 @@ resource = ExtResource("3_l6ahw")
 
 [node name="Tooltip" type="Panel" parent="." unique_id=1785049062]
 visible = false
+z_index = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -1.0
@@ -41,7 +42,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/line_separation = -20
+theme_override_constants/line_separation = -10
 theme_override_font_sizes/normal_font_size = 38
 theme_override_font_sizes/bold_font_size = 38
 theme_override_font_sizes/bold_italics_font_size = 38
@@ -52,7 +53,6 @@ text = "BLA BLA DESC"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("3_fbpm4")
-min_font_size = 16
 metadata/_custom_type_script = "uid://dxkqikr7ubbec"
 
 [node name="ATTENTION" type="TextureRect" parent="." unique_id=1807824459]

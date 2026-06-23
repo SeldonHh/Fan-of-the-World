@@ -17,6 +17,7 @@
 [ext_resource type="Resource" uid="uid://ceyre68fihfeo" path="res://resource/upgrades/Healthy Community.tres" id="14_rrq43"]
 [ext_resource type="Resource" uid="uid://dyp20vvny8yjf" path="res://resource/upgrades/Last.tres" id="16_nopyu"]
 [ext_resource type="Resource" uid="uid://d2y300uoardf5" path="res://resource/upgrades/Child Labor.tres" id="16_qw470"]
+[ext_resource type="Script" uid="uid://dwhrx03b2c174" path="res://addons/AutoSizeText/ui/AutoSizeLabel.gd" id="18_qw470"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ax67"]
 bg_color = Color(0, 0, 0, 0.6156863)
@@ -42,7 +43,7 @@ texture = ExtResource("1_k02jf")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="GridContainer" type="GridContainer" parent="TextureRect" unique_id=1873031691]
+[node name="Boughtable" type="GridContainer" parent="TextureRect" unique_id=1873031691]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
@@ -54,77 +55,196 @@ columns = 3
 script = ExtResource("3_hjf6i")
 metadata/_edit_use_anchors_ = true
 
-[node name="Upgrade" parent="TextureRect/GridContainer" unique_id=2009925537 instance=ExtResource("2_2ax67")]
+[node name="Upgrade" parent="TextureRect/Boughtable" unique_id=2009925537 instance=ExtResource("2_2ax67")]
 layout_mode = 2
 size_flags_vertical = 3
 resource = ExtResource("5_52241")
 
-[node name="Upgrade2" parent="TextureRect/GridContainer" unique_id=845009409 instance=ExtResource("2_2ax67")]
+[node name="Upgrade2" parent="TextureRect/Boughtable" unique_id=845009409 instance=ExtResource("2_2ax67")]
 layout_mode = 2
 size_flags_vertical = 3
 resource = ExtResource("6_68etm")
 
-[node name="Upgrade3" parent="TextureRect/GridContainer" unique_id=1150798450 instance=ExtResource("2_2ax67")]
+[node name="Upgrade3" parent="TextureRect/Boughtable" unique_id=1150798450 instance=ExtResource("2_2ax67")]
 layout_mode = 2
 size_flags_vertical = 3
 resource = ExtResource("7_2smoi")
 
-[node name="Upgrade4" parent="TextureRect/GridContainer" unique_id=1229680437 instance=ExtResource("2_2ax67")]
+[node name="Upgrade4" parent="TextureRect/Boughtable" unique_id=1229680437 instance=ExtResource("2_2ax67")]
 layout_mode = 2
 size_flags_vertical = 3
 resource = ExtResource("7_bm3u7")
 
-[node name="Upgrade5" parent="TextureRect/GridContainer" unique_id=549386242 instance=ExtResource("2_2ax67")]
+[node name="Upgrade5" parent="TextureRect/Boughtable" unique_id=549386242 instance=ExtResource("2_2ax67")]
 layout_mode = 2
 size_flags_vertical = 3
 resource = ExtResource("4_22vox")
 
-[node name="Upgrade6" parent="TextureRect/GridContainer" unique_id=671730936 instance=ExtResource("2_2ax67")]
+[node name="Upgrade6" parent="TextureRect/Boughtable" unique_id=671730936 instance=ExtResource("2_2ax67")]
 layout_mode = 2
 size_flags_vertical = 3
 resource = ExtResource("7_ht33h")
 
-[node name="Upgrade7" parent="TextureRect/GridContainer" unique_id=1465495275 instance=ExtResource("2_2ax67")]
+[node name="Upgrade7" parent="TextureRect/Boughtable" unique_id=1465495275 instance=ExtResource("2_2ax67")]
 layout_mode = 2
 size_flags_vertical = 3
 resource = ExtResource("11_3olpl")
 
-[node name="Upgrade8" parent="TextureRect/GridContainer" unique_id=1837412062 instance=ExtResource("2_2ax67")]
+[node name="Upgrade8" parent="TextureRect/Boughtable" unique_id=1837412062 instance=ExtResource("2_2ax67")]
 layout_mode = 2
 size_flags_vertical = 3
 resource = ExtResource("12_mgw2c")
 
-[node name="Upgrade9" parent="TextureRect/GridContainer" unique_id=851913362 instance=ExtResource("2_2ax67")]
+[node name="Upgrade9" parent="TextureRect/Boughtable" unique_id=851913362 instance=ExtResource("2_2ax67")]
 layout_mode = 2
 size_flags_vertical = 3
 resource = ExtResource("14_rrq43")
 
-[node name="Upgrade10" parent="TextureRect/GridContainer" unique_id=1567274686 instance=ExtResource("2_2ax67")]
+[node name="Upgrade10" parent="TextureRect/Boughtable" unique_id=1567274686 instance=ExtResource("2_2ax67")]
 layout_mode = 2
 size_flags_vertical = 3
 resource = ExtResource("13_vtrjw")
 
-[node name="Upgrade11" parent="TextureRect/GridContainer" unique_id=1851992609 instance=ExtResource("2_2ax67")]
+[node name="Upgrade11" parent="TextureRect/Boughtable" unique_id=1851992609 instance=ExtResource("2_2ax67")]
 layout_mode = 2
 size_flags_vertical = 3
 resource = ExtResource("16_qw470")
 
-[node name="Upgrade12" parent="TextureRect/GridContainer" unique_id=1916839017 instance=ExtResource("2_2ax67")]
+[node name="Upgrade12" parent="TextureRect/Boughtable" unique_id=1916839017 instance=ExtResource("2_2ax67")]
 layout_mode = 2
 size_flags_vertical = 3
 resource = ExtResource("16_nopyu")
 
-[node name="Upgrade13" parent="TextureRect/GridContainer" unique_id=32272279 instance=ExtResource("2_2ax67")]
+[node name="Upgrade13" parent="TextureRect/Boughtable" unique_id=32272279 instance=ExtResource("2_2ax67")]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Upgrade14" parent="TextureRect/GridContainer" unique_id=232284385 instance=ExtResource("2_2ax67")]
+[node name="Upgrade14" parent="TextureRect/Boughtable" unique_id=232284385 instance=ExtResource("2_2ax67")]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Upgrade15" parent="TextureRect/GridContainer" unique_id=492288104 instance=ExtResource("2_2ax67")]
+[node name="Upgrade15" parent="TextureRect/Boughtable" unique_id=492288104 instance=ExtResource("2_2ax67")]
 layout_mode = 2
 size_flags_vertical = 3
+
+[node name="Bought" type="GridContainer" parent="TextureRect" unique_id=115901188]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.36805555
+anchor_top = 0.20987654
+anchor_right = 0.6302083
+anchor_bottom = 0.72839504
+offset_top = -7.5199966
+offset_bottom = -7.519989
+columns = 3
+script = ExtResource("3_hjf6i")
+metadata/_edit_use_anchors_ = true
+
+[node name="Upgrade" parent="TextureRect/Bought" unique_id=849262148 instance=ExtResource("2_2ax67")]
+layout_mode = 2
+size_flags_vertical = 3
+disabled = true
+seen = true
+desc_only = true
+
+[node name="Upgrade2" parent="TextureRect/Bought" unique_id=242699638 instance=ExtResource("2_2ax67")]
+layout_mode = 2
+size_flags_vertical = 3
+disabled = true
+seen = true
+desc_only = true
+
+[node name="Upgrade3" parent="TextureRect/Bought" unique_id=1623970274 instance=ExtResource("2_2ax67")]
+layout_mode = 2
+size_flags_vertical = 3
+disabled = true
+seen = true
+desc_only = true
+
+[node name="Upgrade4" parent="TextureRect/Bought" unique_id=1833483112 instance=ExtResource("2_2ax67")]
+layout_mode = 2
+size_flags_vertical = 3
+disabled = true
+seen = true
+desc_only = true
+
+[node name="Upgrade5" parent="TextureRect/Bought" unique_id=1299047704 instance=ExtResource("2_2ax67")]
+layout_mode = 2
+size_flags_vertical = 3
+disabled = true
+seen = true
+desc_only = true
+
+[node name="Upgrade6" parent="TextureRect/Bought" unique_id=411528278 instance=ExtResource("2_2ax67")]
+layout_mode = 2
+size_flags_vertical = 3
+disabled = true
+seen = true
+desc_only = true
+
+[node name="Upgrade7" parent="TextureRect/Bought" unique_id=976798059 instance=ExtResource("2_2ax67")]
+layout_mode = 2
+size_flags_vertical = 3
+disabled = true
+seen = true
+desc_only = true
+
+[node name="Upgrade8" parent="TextureRect/Bought" unique_id=669945990 instance=ExtResource("2_2ax67")]
+layout_mode = 2
+size_flags_vertical = 3
+disabled = true
+seen = true
+desc_only = true
+
+[node name="Upgrade9" parent="TextureRect/Bought" unique_id=567714373 instance=ExtResource("2_2ax67")]
+layout_mode = 2
+size_flags_vertical = 3
+disabled = true
+seen = true
+desc_only = true
+
+[node name="Upgrade10" parent="TextureRect/Bought" unique_id=1588674811 instance=ExtResource("2_2ax67")]
+layout_mode = 2
+size_flags_vertical = 3
+disabled = true
+seen = true
+desc_only = true
+
+[node name="Upgrade11" parent="TextureRect/Bought" unique_id=205342224 instance=ExtResource("2_2ax67")]
+layout_mode = 2
+size_flags_vertical = 3
+disabled = true
+seen = true
+desc_only = true
+
+[node name="Upgrade12" parent="TextureRect/Bought" unique_id=262925490 instance=ExtResource("2_2ax67")]
+layout_mode = 2
+size_flags_vertical = 3
+disabled = true
+seen = true
+desc_only = true
+
+[node name="Upgrade13" parent="TextureRect/Bought" unique_id=1755878206 instance=ExtResource("2_2ax67")]
+layout_mode = 2
+size_flags_vertical = 3
+disabled = true
+seen = true
+desc_only = true
+
+[node name="Upgrade14" parent="TextureRect/Bought" unique_id=258990590 instance=ExtResource("2_2ax67")]
+layout_mode = 2
+size_flags_vertical = 3
+disabled = true
+seen = true
+desc_only = true
+
+[node name="Upgrade15" parent="TextureRect/Bought" unique_id=636960200 instance=ExtResource("2_2ax67")]
+layout_mode = 2
+size_flags_vertical = 3
+disabled = true
+seen = true
+desc_only = true
 
 [node name="Exit" type="TextureButton" parent="TextureRect" unique_id=237361234]
 layout_mode = 1
@@ -153,4 +273,34 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_2ax67")
 
+[node name="CheckButton" type="CheckButton" parent="." unique_id=1231584488]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.485
+anchor_top = 0.15895061
+anchor_right = 0.515
+anchor_bottom = 0.21292593
+grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="check_text" type="Label" parent="CheckButton" unique_id=727112822]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.70454544
+anchor_top = -0.42857173
+anchor_right = 1.6590909
+anchor_bottom = 0.57142824
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Buyable"
+horizontal_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("18_qw470")
+metadata/_custom_type_script = "uid://dwhrx03b2c174"
+metadata/_edit_use_anchors_ = true
+
 [connection signal="pressed" from="TextureRect/Exit" to="." method="_on_exit_pressed"]
+[connection signal="toggled" from="CheckButton" to="." method="_on_check_button_toggled"]
