@@ -9,4 +9,7 @@ func _ready() -> void:
 func _on_pressed() -> void:
 	upgrade_menu.show()
 	auto_size_label.hide()
-	
+
+func stop():
+	self.disabled = true
+	self.texture_normal = preload("uid://chfrf4a4w12c0")

@@ -1,12 +1,13 @@
 extends TextureRect
 @onready var sheet: TextureRect = $Sheet
+@onready var letter_sfx: AudioStreamPlayer = $Letter_SFX
 
 
 func _ready() -> void:
 	Global.letter = self
 
 func tween_up():
-		
+	letter_sfx.play(1.0)
 	var tween = get_tree().create_tween()
 	tween.set_ease(Tween.EASE_OUT)
 	tween.tween_property(self,"anchor_top",.22,1)
@@ -20,6 +21,7 @@ func tween_down():
 	tween.parallel().tween_property(self,"anchor_bottom",1.93,.7)
 	tween.tween_callback(func(): Global.stop_lowering_joules = false)
 func close():
+	letter_sfx.play(1.0)
 	var tween = get_tree().create_tween()
 	tween.set_ease(Tween.EASE_OUT)
 	tween.tween_property(sheet,"anchor_top",.25,.4)

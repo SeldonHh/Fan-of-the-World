@@ -1,5 +1,6 @@
 extends TextureButton
 @onready var tooltip: Panel = $Tooltip
+@onready var cash_sfx: AudioStreamPlayer = $cash_sfx
 
 var placeholder = preload("uid://b5oaplmavxw6n")
 @export var resource : UpgradeResource = placeholder
@@ -22,6 +23,7 @@ heats the atmosphere by %s Joules"%[resource.joules_requirement,resource.cost]
 
 func _on_pressed() -> void:
 	if Global.joules <= resource.joules_requirement and self.resource != placeholder:
+		cash_sfx.play(.4)
 		match resource.name:
 			"Fanception": 
 				Global.fan.constant_spinning = true

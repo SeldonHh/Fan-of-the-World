@@ -19,7 +19,13 @@ Game,Music and Art by Hadrien HEURTEAUX
 Original background art by Aki Aoki (has been modified)"]
 	}
 
+# Load the custom images for the mouse cursor.
+var arrow = load("uid://7gbwt8nswn84")
+var beam = load("uid://fuacdy74u573")
+
 func _ready() -> void:
+	# Changes a specific shape of the cursor (here, the I-beam shape).
+	Input.set_custom_mouse_cursor(beam, Input.CURSOR_POINTING_HAND)
 	await get_tree().create_timer(.1).timeout
 	send_message("Tuto")
 
@@ -40,6 +46,8 @@ func send_message(key):
 		messages[key] = []
 
 func end():
+	phone.stop()
+	motivation.stop()
 	fan.stop()
 	send_message("The End")
 	var window_size = get_window().size
@@ -58,3 +66,4 @@ func meta_game_complete(gameId: String) -> void:
 		JavaScriptBridge.eval("localStorage.setItem(\"%s\", new Date().toJSON());" % gameId)
 
 var volume := 100
+var sfx_volume := 100

@@ -18,6 +18,8 @@
 [ext_resource type="Resource" uid="uid://dyp20vvny8yjf" path="res://resource/upgrades/Last.tres" id="16_nopyu"]
 [ext_resource type="Resource" uid="uid://d2y300uoardf5" path="res://resource/upgrades/Child Labor.tres" id="16_qw470"]
 [ext_resource type="Script" uid="uid://dwhrx03b2c174" path="res://addons/AutoSizeText/ui/AutoSizeLabel.gd" id="18_qw470"]
+[ext_resource type="AudioStream" uid="uid://corthp50j1lkr" path="res://Assets/sfx/notif_sfx.mp3" id="19_dnjgo"]
+[ext_resource type="Script" uid="uid://ckb3x8cwccpr1" path="res://Scenes/MainStuff/sfx.gd" id="19_onirn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ax67"]
 bg_color = Color(0, 0, 0, 0.6156863)
@@ -258,6 +260,7 @@ offset_top = -0.18688965
 offset_right = 0.4159546
 grow_horizontal = 2
 grow_vertical = 0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("3_ehrvl")
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
@@ -281,6 +284,7 @@ anchor_top = 0.15895061
 anchor_right = 0.515
 anchor_bottom = 0.21292593
 grow_horizontal = 2
+mouse_default_cursor_shape = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="check_text" type="Label" parent="CheckButton" unique_id=727112822]
@@ -301,6 +305,10 @@ text_overrun_behavior = 3
 script = ExtResource("18_qw470")
 metadata/_custom_type_script = "uid://dwhrx03b2c174"
 metadata/_edit_use_anchors_ = true
+
+[node name="notif_sfx" type="AudioStreamPlayer" parent="." unique_id=743401190]
+stream = ExtResource("19_dnjgo")
+script = ExtResource("19_onirn")
 
 [connection signal="pressed" from="TextureRect/Exit" to="." method="_on_exit_pressed"]
 [connection signal="toggled" from="CheckButton" to="." method="_on_check_button_toggled"]
