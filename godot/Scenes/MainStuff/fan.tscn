@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bykdk8ig5cbna" path="res://Scenes/MainStuff/fan.gd" id="1_5r4nd"]
 [ext_resource type="Texture2D" uid="uid://diygv6ycq8rmk" path="res://Assets/shiii/Fan.png" id="1_cgk1g"]
+[ext_resource type="AudioStream" uid="uid://cq6rapjdonpa0" path="res://Assets/sfx/swoosh.ogg" id="3_oipab"]
+[ext_resource type="Script" uid="uid://ckb3x8cwccpr1" path="res://Scenes/MainStuff/sfx.gd" id="4_cgk1g"]
 
 [node name="Fan" type="Button" unique_id=30920848]
 anchors_preset = 15
@@ -24,5 +26,11 @@ grow_vertical = 2
 texture = ExtResource("1_cgk1g")
 expand_mode = 3
 stretch_mode = 5
+
+[node name="swhoosh" type="AudioStreamPlayer" parent="." unique_id=143078047]
+stream = ExtResource("3_oipab")
+max_polyphony = 5
+script = ExtResource("4_cgk1g")
+minus_db = 12
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

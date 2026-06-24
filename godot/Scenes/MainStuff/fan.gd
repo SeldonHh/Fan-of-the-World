@@ -26,7 +26,7 @@ var actual_crit_chance := crit_chance
 @export var crit_damage := 10
 var motivation_on_turn := 0.0
 var motivation_on_crit_chance := false
-
+var max_crit_label := 20
 func add_power(amount):
 	fanning_power += fanning_power_bonus * amount
 
@@ -40,6 +40,7 @@ func remove_bonus_power(amount):
 
 func _ready() -> void:
 	Global.fan = self
+@onready var swhoosh: AudioStreamPlayer = $swhoosh
 
 func spin():
 	if !spinning:
@@ -71,22 +72,25 @@ func spin():
 
 
 func _process(_delta: float) -> void:
-	""""""
-	if Input.is_action_just_pressed("Debug"):
-		var temp = fanning_power
-		add_power(9998)
-		Global.motivation.add_motivation(0)
-		spin()
-		await get_tree().create_timer(spinning_time).timeout
-		fanning_power = temp 
-	if Input.is_action_just_pressed("debug2"):
-		constant_spinning = !constant_spinning
-		start_constant_spin()
+	if "debug" in OS.get_cmdline_args():
+		if Input.is_action_just_pressed("Debug"):
+			var temp = fanning_power
+			add_power(9998)
+			Global.motivation.add_motivation(0)
+			spin()
+			await get_tree().create_timer(spinning_time).timeout
+			fanning_power = temp 
+		if Input.is_action_just_pressed("debug2"):
+			constant_spinning = !constant_spinning
+			start_constant_spin()
 	
 	if motivation_on_crit_chance:
 		actual_crit_chance = crit_chance*(1+Global.motivation.value/100)
 	else:
 		actual_crit_chance = crit_chance
+	if (spinning or constant_spinning) and swhoosh.playing == false:
+		swhoosh.pitch_scale = randf_range(.8,1.2)
+		swhoosh.play()
 
 func stop():
 	self.disabled = true
@@ -97,20 +101,21 @@ func _on_pressed() -> void:
 	spin()
 	
 func crit(amount):
-	var label = AutoSizeRichTextLabel.new()
-	label.bbcode_enabled = true
-	label.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	label.text = '[b][color=yellow]CRIT!
+	if get_child_count() < max_crit_label:
+		var label = AutoSizeRichTextLabel.new()
+		label.bbcode_enabled = true
+		label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		label.text = '[b][color=yellow]CRIT!
 -%s Joules'%amount
-	label.position = Vector2(randf_range(position.x,position.x-size.x),randf_range(position.y,position.y-size.y))
-	var screen_size = get_window().size
-	label.custom_minimum_size = Vector2(screen_size.x/12.0,screen_size.y/10.0)
-	label.scroll_active = false
-	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	self.add_child(label)
-	await get_tree().create_timer(5).timeout
-	label.queue_free()
+		label.position = Vector2(randf_range(position.x,position.x-size.x),randf_range(position.y,position.y-size.y))
+		var screen_size = get_window().size
+		label.custom_minimum_size = Vector2(screen_size.x/12.0,screen_size.y/10.0)
+		label.scroll_active = false
+		label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+		self.add_child(label)
+		await get_tree().create_timer(5).timeout
+		label.queue_free()
 
 func start_constant_spin():
 	if constant_spin_running:
