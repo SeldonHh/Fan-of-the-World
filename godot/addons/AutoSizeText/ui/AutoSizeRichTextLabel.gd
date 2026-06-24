@@ -114,7 +114,11 @@ func needs_resize() -> bool:
 	
 func _process(_delta: float) -> void:
 	if not Engine.is_editor_hint() and main_display:
-		self.text = "[color=crimson]%s Joules[/color]
+		if Global.joules < 1900:
+			self.text = "[color=crimson]%s Joules[/color]
+Normal temperatures have been reached"%[format_joules(Global.joules)]
+		else:
+			self.text = "[color=crimson]%s Joules[/color]
 [color=beige](%s°C or %s°F)[/color]
 Above regular temperatures"%[format_joules(Global.joules),format_celsius(Global.joules),format_farenheit(Global.joules)]
 

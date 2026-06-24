@@ -5,6 +5,7 @@ extends TextureRect
 
 func _on_close_pressed() -> void:
 	Global.letter.close()
+	
 func _ready() -> void:
 	for child in get_children():
 		child.hide()

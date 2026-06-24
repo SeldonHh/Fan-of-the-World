@@ -18,7 +18,7 @@ func tween_down():
 	tween.set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(self,"anchor_top",1.22,1)
 	tween.parallel().tween_property(self,"anchor_bottom",1.93,.7)
-
+	tween.tween_callback(func(): Global.stop_lowering_joules = false)
 func close():
 	var tween = get_tree().create_tween()
 	tween.set_ease(Tween.EASE_OUT)
