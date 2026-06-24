@@ -74,7 +74,7 @@ func _process(_delta: float) -> void:
 	""""""
 	if Input.is_action_just_pressed("Debug"):
 		var temp = fanning_power
-		add_power(50000)
+		add_power(9998)
 		Global.motivation.add_motivation(0)
 		spin()
 		await get_tree().create_timer(spinning_time).timeout

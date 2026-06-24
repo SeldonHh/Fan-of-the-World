@@ -17,6 +17,9 @@
 [ext_resource type="Script" uid="uid://cokjdr6q7r0ov" path="res://Scenes/MainStuff/option.gd" id="15_swcbe"]
 [ext_resource type="Texture2D" uid="uid://dhtl828ps4esi" path="res://Assets/shiii/pen.png" id="16_qyqbn"]
 [ext_resource type="Script" uid="uid://dhsnh3gxnckk3" path="res://Scenes/MainStuff/pen.gd" id="17_6bhj2"]
+[ext_resource type="Texture2D" uid="uid://dxdkdsklj417e" path="res://Assets/shiii/letter.png" id="18_acqp8"]
+[ext_resource type="Script" uid="uid://b7gdpit7jhfol" path="res://Scenes/MainStuff/letter.gd" id="19_cbaa3"]
+[ext_resource type="PackedScene" uid="uid://c20cw7gexc1a7" path="res://Scenes/Ui/sheet.tscn" id="20_xsi4l"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h5xj3"]
 bg_color = Color(0, 0, 0, 0.6392157)
@@ -323,6 +326,25 @@ offset_right = -0.5120239
 offset_bottom = -0.32000732
 texture_normal = ExtResource("16_qyqbn")
 script = ExtResource("17_6bhj2")
+
+[node name="Letter" type="TextureRect" parent="." unique_id=1668371591]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 1.22
+anchor_right = 0.75
+anchor_bottom = 1.93
+offset_right = -0.2960205
+offset_bottom = -0.32000732
+texture = ExtResource("18_acqp8")
+stretch_mode = 5
+script = ExtResource("19_cbaa3")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sheet" parent="Letter" unique_id=1252355275 instance=ExtResource("20_xsi4l")]
+layout_mode = 1
+anchor_left = 0.25
+anchor_right = 0.75
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="Motivationbar/MotivationButton" to="Motivationbar" method="_on_button_pressed"]
