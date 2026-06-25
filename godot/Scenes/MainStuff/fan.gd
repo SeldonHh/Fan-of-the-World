@@ -127,7 +127,7 @@ func start_constant_spin():
 		if current_time < boost_until:
 			speed_scale = base_speed_scale * (1+motivationbar.value / 100)
 		else:
-			speed_scale = constant_spinning_base_speed_scale * (1+motivationbar.value / 300)
+			speed_scale = constant_spinning_base_speed_scale * (1+motivationbar.value / 150)
 		texture_index = texture_index+1
 		if texture_index >= len(TEXTURES):
 			texture_index = 0

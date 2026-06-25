@@ -260,6 +260,7 @@ metadata/_custom_type_script = "uid://dwhrx03b2c174"
 [node name="Upgrade_Menu" parent="." unique_id=1139010220 instance=ExtResource("8_fappo")]
 unique_name_in_owner = true
 visible = false
+z_index = 2
 layout_mode = 1
 anchors_preset = -1
 
