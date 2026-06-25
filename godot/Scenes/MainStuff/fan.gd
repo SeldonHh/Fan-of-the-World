@@ -70,7 +70,6 @@ func spin():
 				fan_texture.texture = TEXTURES[texture_index]
 				await get_tree().create_timer(ANIM_IPS/speed_scale).timeout
 
-
 func _process(_delta: float) -> void:
 	if "debug" in OS.get_cmdline_args():
 		if Input.is_action_just_pressed("Debug"):
@@ -118,6 +117,8 @@ func crit(amount):
 		label.queue_free()
 
 func start_constant_spin():
+	swhoosh.stream = preload("uid://ctawwtlmnojtb")
+	swhoosh.minus_db = 0
 	if constant_spin_running:
 		return
 	constant_spin_running = true

@@ -25,6 +25,8 @@ func _on_pressed() -> void:
 	if Global.joules <= resource.joules_requirement and self.resource != placeholder:
 		cash_sfx.play(.4)
 		match resource.name:
+			"Autospin":
+				Global.fan.constant_spinning_base_speed_scale += .6
 			"Fanception": 
 				Global.fan.constant_spinning = true
 				Global.fan.start_constant_spin()

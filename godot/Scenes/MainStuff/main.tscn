@@ -416,11 +416,11 @@ script = ExtResource("22_gys0y")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.049000002
-anchor_top = 0.261
+anchor_top = 0.264
 anchor_right = 0.102000006
 anchor_bottom = 0.386
 offset_left = 0.55199814
-offset_top = 1.871994
+offset_top = -0.072006226
 offset_right = -0.50400543
 offset_bottom = -0.12800598
 mouse_default_cursor_shape = 2
@@ -443,4 +443,5 @@ autostart = true
 [connection signal="pressed" from="Phone" to="Phone" method="_on_pressed"]
 [connection signal="pressed" from="Pen" to="Pen" method="_on_pressed"]
 [connection signal="pressed" from="cat" to="cat" method="_on_pressed"]
+[connection signal="resized" from="cat" to="cat" method="_on_resized"]
 [connection signal="timeout" from="cat/Timer" to="cat" method="_on_timer_timeout"]

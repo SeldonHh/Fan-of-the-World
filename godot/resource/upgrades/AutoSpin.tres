@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="UpgradeResource" format=3 uid="uid://cubnylf7qcbsv"]
+
+[ext_resource type="Script" uid="uid://fp67a1888byh" path="res://resource/base/UpgradeBase.gd" id="1_ag6os"]
+[ext_resource type="Texture2D" uid="uid://bxaa1q7dd00fr" path="res://Assets/shiii/recycle.png" id="2_ag6os"]
+
+[resource]
+script = ExtResource("1_ag6os")
+name = "Auto Spin"
+texture = ExtResource("2_ag6os")
+joules_requirement = 95000
+desc = "Increase the auto spin speed"
+cost = 500
+metadata/_custom_type_script = "uid://fp67a1888byh"
