@@ -8,7 +8,7 @@ var upgrade_menu : Control
 var wheel : AnimatedSprite2D
 var letter : TextureRect
 var stop_lowering_joules := false
-
+var book : TextureButton
 var messages ={
 	"Tuto": ["[b]Welcome Sylvia","Welcome to your [b]new job[/b], as you know climate change has devastated our world and the temperature has risen to [b]+52[/b]°C (or [b]+96[/b]°F), the equivalent of [b]99999 joules[/b] only antartica is suitable for life now. Unfortunately due tu the latest budget cuts in the ecology sector you're the only remaining operator we have, we sent you our latest invention the [b]Cosmic Cooling Fan 3000[/b], don't ask how we made it, it's [b]your job[/b] to use, please Sylvia, help us, [b]or we are cooked."],
 	"Agriculture": ["[b]Return of agriculture","Only now is [b]agriculture[/b] viable again in most of the planet, however the number of species that [b]died[/b] during the heat age is [b]incommensurable[/b], let's hope we'll find some new species"],
@@ -27,6 +27,8 @@ func _ready() -> void:
 	# Changes a specific shape of the cursor (here, the I-beam shape).
 	Input.set_custom_mouse_cursor(beam, Input.CURSOR_POINTING_HAND)
 	await get_tree().create_timer(.1).timeout
+	if "debug" in OS.get_cmdline_args():
+		return
 	send_message("Tuto")
 
 func lower_joules(amount):

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bpyicvv61cx6o" path="res://Scenes/MainStuff/main.gd" id="1_mhwg1"]
 [ext_resource type="PackedScene" uid="uid://djgpl8n77rhg2" path="res://Scenes/MainStuff/fan.tscn" id="1_r0vd8"]
-[ext_resource type="Texture2D" uid="uid://bnmbwcjhgbpmx" path="res://Assets/shiii/Background_no_kb.png" id="1_tewny"]
+[ext_resource type="Texture2D" uid="uid://dwrw876kydkcp" path="res://Assets/shiii/Background_no_kb1.png" id="2_cukkd"]
 [ext_resource type="PackedScene" uid="uid://wdrhdn6y57f5" path="res://Scenes/Ui/Panel.tscn" id="3_5xgcf"]
 [ext_resource type="Script" uid="uid://dxkqikr7ubbec" path="res://addons/AutoSizeText/ui/AutoSizeRichTextLabel.gd" id="4_n07qj"]
 [ext_resource type="Script" uid="uid://dwhrx03b2c174" path="res://addons/AutoSizeText/ui/AutoSizeLabel.gd" id="4_tewny"]
@@ -24,8 +24,11 @@
 [ext_resource type="AudioStream" uid="uid://cgvdg11d52eum" path="res://Assets/sfx/letter_sfx.ogg" id="21_li67x"]
 [ext_resource type="Script" uid="uid://ckb3x8cwccpr1" path="res://Scenes/MainStuff/sfx.gd" id="22_gys0y"]
 [ext_resource type="Texture2D" uid="uid://c0o0scc6d73n8" path="res://Assets/shiii/cat.png" id="24_divm2"]
-[ext_resource type="AudioStream" uid="uid://7csh3xv5k72o" path="res://Assets/sfx/meow1_sfx.mp3" id="25_oh3iw"]
 [ext_resource type="Script" uid="uid://dtxg36fu1uovw" path="res://Scenes/MainStuff/cat.gd" id="25_sencb"]
+[ext_resource type="AudioStream" uid="uid://dicg8vjyul34d" path="res://Assets/sfx/meow2_sfx.mp3" id="26_6fksa"]
+[ext_resource type="Texture2D" uid="uid://pj01bcwrwlub" path="res://Assets/shiii/book.png" id="27_cn4e2"]
+[ext_resource type="Script" uid="uid://4o4f6gb76cf5" path="res://Scenes/MainStuff/book.gd" id="28_cn4e2"]
+[ext_resource type="PackedScene" uid="uid://d14p0n5hwbonv" path="res://Scenes/book/book_menu.tscn" id="29_m8wsu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h5xj3"]
 bg_color = Color(0, 0, 0, 0.6392157)
@@ -94,7 +97,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_tewny")
+texture = ExtResource("2_cukkd")
 expand_mode = 2
 
 [node name="Fan" parent="." unique_id=30920848 instance=ExtResource("1_r0vd8")]
@@ -445,13 +448,45 @@ stretch_mode = 5
 script = ExtResource("25_sencb")
 
 [node name="cat_sfx" type="AudioStreamPlayer" parent="Cat_Holder/cat" unique_id=779481052]
-stream = ExtResource("25_oh3iw")
+stream = ExtResource("26_6fksa")
 script = ExtResource("22_gys0y")
-minus_db = 3
+minus_db = 2
 
 [node name="Timer" type="Timer" parent="Cat_Holder/cat" unique_id=1195471993]
 wait_time = 5.0
 autostart = true
+
+[node name="Book_Holder" type="Control" parent="." unique_id=1553997336]
+layout_mode = 1
+anchor_left = 0.089
+anchor_top = 0.721
+anchor_right = 0.19900002
+anchor_bottom = 0.975
+offset_left = -0.5279999
+offset_top = -0.20800781
+offset_right = -0.24801636
+offset_bottom = 0.2000122
+
+[node name="Book" type="TextureButton" parent="Book_Holder" unique_id=1386895829]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.047000002
+anchor_right = 1.197
+anchor_bottom = 1.0
+offset_left = 0.03099966
+offset_right = -0.018997192
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("27_cn4e2")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("28_cn4e2")
+
+[node name="Book_Menu" parent="." unique_id=2088517031 instance=ExtResource("29_m8wsu")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="Motivationbar/MotivationButton" to="Motivationbar" method="_on_button_pressed"]
@@ -460,3 +495,4 @@ autostart = true
 [connection signal="pressed" from="Cat_Holder/cat" to="Cat_Holder/cat" method="_on_pressed"]
 [connection signal="resized" from="Cat_Holder/cat" to="Cat_Holder/cat" method="_on_resized"]
 [connection signal="timeout" from="Cat_Holder/cat/Timer" to="Cat_Holder/cat" method="_on_timer_timeout"]
+[connection signal="pressed" from="Book_Holder/Book" to="Book_Holder/Book" method="_on_pressed"]

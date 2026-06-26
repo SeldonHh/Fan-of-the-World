@@ -1,0 +1,271 @@
+[gd_scene format=3 uid="uid://d14p0n5hwbonv"]
+
+[ext_resource type="Script" uid="uid://bryjkphxvxtn2" path="res://Scenes/MainStuff/book_menu.gd" id="1_3iuyb"]
+[ext_resource type="Texture2D" uid="uid://dyytoq5jntan" path="res://Assets/shiii/book_bg.png" id="2_botdy"]
+[ext_resource type="Texture2D" uid="uid://chup8tfo8qvuq" path="res://Assets/shiii/quit.png" id="3_iksp6"]
+[ext_resource type="Texture2D" uid="uid://cfxnf5uxef1gi" path="res://Assets/shiii/biology.png" id="4_8mw6s"]
+[ext_resource type="Script" uid="uid://dxkqikr7ubbec" path="res://addons/AutoSizeText/ui/AutoSizeRichTextLabel.gd" id="5_botdy"]
+[ext_resource type="Script" uid="uid://qj7l4b8e0khb" path="res://addons/AutoSizeText/ui/AutoSizeButton.gd" id="6_iksp6"]
+[ext_resource type="Script" uid="uid://dwhrx03b2c174" path="res://addons/AutoSizeText/ui/AutoSizeLabel.gd" id="7_8mw6s"]
+[ext_resource type="AudioStream" uid="uid://bbgg7ktieej6" path="res://Assets/sfx/correct.mp3" id="8_ur5xu"]
+[ext_resource type="Script" uid="uid://ckb3x8cwccpr1" path="res://Scenes/MainStuff/sfx.gd" id="8_vss2x"]
+[ext_resource type="AudioStream" uid="uid://bl4xlfwqv15fv" path="res://Assets/sfx/wrong.mp3" id="10_dqeui"]
+[ext_resource type="AudioStream" uid="uid://corthp50j1lkr" path="res://Assets/sfx/notif_sfx.mp3" id="11_dqeui"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iksp6"]
+bg_color = Color(0, 0, 0, 1)
+draw_center = false
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 18
+expand_margin_left = 16.0
+expand_margin_top = 10.0
+expand_margin_right = 16.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8mw6s"]
+bg_color = Color(0.043137256, 0.043137256, 0.043137256, 0.52156866)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 18
+expand_margin_left = 16.0
+expand_margin_top = 10.0
+expand_margin_right = 16.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iksp6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m8wsu"]
+bg_color = Color(0, 0, 0, 0.6156863)
+
+[node name="Book_Menu" type="Control" unique_id=2088517031]
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3iuyb")
+
+[node name="book_bg" type="TextureRect" parent="." unique_id=1670378436]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.07700001
+anchor_top = 0.07300001
+anchor_right = 0.924
+anchor_bottom = 0.92700005
+offset_left = 1.29599
+offset_top = -0.30400467
+offset_right = -2.447998
+offset_bottom = 0.30395508
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_botdy")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Exit" type="TextureButton" parent="book_bg" unique_id=1129419144]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.83500004
+anchor_top = 0.049000002
+anchor_right = 0.8880001
+anchor_bottom = 0.13900001
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_iksp6")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="bio" type="TextureRect" parent="book_bg" unique_id=641510059]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.095000006
+anchor_top = 0.049000002
+anchor_right = 0.15300001
+anchor_bottom = 0.15200001
+offset_left = -0.34000397
+offset_top = -0.14600182
+offset_right = 0.28398132
+offset_bottom = -0.20800781
+texture = ExtResource("4_8mw6s")
+stretch_mode = 5
+
+[node name="question" type="RichTextLabel" parent="book_bg" unique_id=1080213108]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.135
+anchor_top = 0.2762455
+anchor_right = 0.42400002
+anchor_bottom = 0.82844764
+offset_left = -0.22000122
+offset_top = -0.040008545
+offset_right = -0.12802124
+offset_bottom = 0.040008545
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0.32156864, 0, 1)
+theme_override_constants/line_separation = -4
+theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/bold_font_size = 36
+theme_override_font_sizes/bold_italics_font_size = 36
+theme_override_font_sizes/italics_font_size = 36
+theme_override_font_sizes/mono_font_size = 36
+bbcode_enabled = true
+text = "[b]Question 1: how many trees are cut down each year?"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_botdy")
+min_font_size = 3
+metadata/_custom_type_script = "uid://dxkqikr7ubbec"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button_container" type="VBoxContainer" parent="book_bg" unique_id=1490866279]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5792181
+anchor_top = 0.21480145
+anchor_right = 0.849642
+anchor_bottom = 0.8752491
+offset_right = 0.14799881
+offset_bottom = 0.1119957
+theme_override_constants/separation = 32
+metadata/_edit_use_anchors_ = true
+
+[node name="button1" type="Button" parent="book_bg/Button_container" unique_id=94677430]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.43529412, 0.83137256, 0, 1)
+theme_override_colors/font_focus_color = Color(0.43529412, 0.83137256, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.43529412, 0.83137256, 0, 1)
+theme_override_colors/font_hover_color = Color(0.43529412, 0.83137256, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.43529412, 0.83137256, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.43529412, 0.83137256, 0, 1)
+theme_override_constants/h_separation = 0
+theme_override_constants/line_spacing = -10
+theme_override_font_sizes/font_size = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_iksp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8mw6s")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_iksp6")
+disabled = true
+clip_text = true
+script = ExtResource("6_iksp6")
+button_text = "1. 40 million"
+metadata/_custom_type_script = "uid://qj7l4b8e0khb"
+
+[node name="button2" type="Button" parent="book_bg/Button_container" unique_id=1574210157]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.43529412, 0.83137256, 0, 1)
+theme_override_colors/font_focus_color = Color(0.43529412, 0.83137256, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.43529412, 0.83137256, 0, 1)
+theme_override_colors/font_hover_color = Color(0.43529412, 0.83137256, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.43529412, 0.83137256, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.43529412, 0.83137256, 0, 1)
+theme_override_constants/h_separation = 0
+theme_override_constants/line_spacing = -10
+theme_override_font_sizes/font_size = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_iksp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8mw6s")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_iksp6")
+disabled = true
+clip_text = true
+script = ExtResource("6_iksp6")
+button_text = "2. 4000"
+metadata/_custom_type_script = "uid://qj7l4b8e0khb"
+
+[node name="button3" type="Button" parent="book_bg/Button_container" unique_id=1036546238]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.43529412, 0.83137256, 0, 1)
+theme_override_colors/font_focus_color = Color(0.43529412, 0.83137256, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.43529412, 0.83137256, 0, 1)
+theme_override_colors/font_hover_color = Color(0.43529412, 0.83137256, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.43529412, 0.83137256, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.43529412, 0.83137256, 0, 1)
+theme_override_constants/h_separation = 0
+theme_override_constants/line_spacing = -10
+theme_override_font_sizes/font_size = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_iksp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8mw6s")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_iksp6")
+disabled = true
+clip_text = true
+script = ExtResource("6_iksp6")
+button_text = "3. 120 million"
+metadata/_custom_type_script = "uid://qj7l4b8e0khb"
+
+[node name="price" type="Label" parent="book_bg" unique_id=1521357798]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.14197531
+anchor_top = 0.1768953
+anchor_right = 0.42268723
+anchor_bottom = 0.30124187
+offset_right = 0.14799881
+offset_bottom = 0.1119957
+theme_override_colors/font_color = Color(0, 0.32156864, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "For XXXXX Joules"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("7_8mw6s")
+metadata/_custom_type_script = "uid://dwhrx03b2c174"
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="." unique_id=527660858]
+visible = false
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_m8wsu")
+
+[node name="correct" type="AudioStreamPlayer" parent="." unique_id=650355921]
+stream = ExtResource("8_ur5xu")
+script = ExtResource("8_vss2x")
+minus_db = 6
+
+[node name="wrong" type="AudioStreamPlayer" parent="." unique_id=859129011]
+stream = ExtResource("10_dqeui")
+pitch_scale = 1.1
+script = ExtResource("8_vss2x")
+minus_db = -2
+
+[node name="notif_sfx" type="AudioStreamPlayer" parent="." unique_id=2063226617]
+stream = ExtResource("11_dqeui")
+pitch_scale = 1.3
+script = ExtResource("8_vss2x")
+
+[connection signal="pressed" from="book_bg/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="book_bg/Button_container/button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="book_bg/Button_container/button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="book_bg/Button_container/button3" to="." method="_on_button_3_pressed"]
