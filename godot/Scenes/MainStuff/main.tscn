@@ -86,6 +86,7 @@ wait_time = 30.0
 autostart = true
 
 [node name="BG" type="TextureRect" parent="." unique_id=471589372]
+unique_name_in_owner = true
 z_index = -99
 layout_mode = 1
 anchors_preset = 15
@@ -373,17 +374,24 @@ script = ExtResource("4_tewny")
 metadata/_custom_type_script = "uid://dwhrx03b2c174"
 metadata/_edit_use_anchors_ = true
 
-[node name="Pen" type="TextureButton" parent="." unique_id=1977027622]
+[node name="Pen_Holder" type="Control" parent="." unique_id=1502264755]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.201
-anchor_top = 0.77900004
-anchor_right = 0.30600002
-anchor_bottom = 0.96500003
-offset_left = 0.44799805
-offset_top = 0.2079773
-offset_right = -0.5120239
-offset_bottom = -0.32000732
+anchor_left = 0.21900001
+anchor_top = 0.78200006
+anchor_right = 0.317
+anchor_bottom = 0.98300004
+offset_left = -0.28800964
+offset_top = 0.26394653
+offset_right = -0.18399048
+offset_bottom = 0.015991211
+
+[node name="Pen" type="TextureButton" parent="Pen_Holder" unique_id=1977027622]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("16_qyqbn")
 script = ExtResource("17_6bhj2")
@@ -413,36 +421,42 @@ stream = ExtResource("21_li67x")
 volume_db = -3.649
 script = ExtResource("22_gys0y")
 
-[node name="cat" type="TextureButton" parent="." unique_id=1243155426]
+[node name="Cat_Holder" type="Control" parent="." unique_id=464039378]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.049000002
-anchor_top = 0.264
-anchor_right = 0.102000006
-anchor_bottom = 0.386
-offset_left = 0.55199814
-offset_top = -0.072006226
-offset_right = -0.50400543
-offset_bottom = -0.12800598
+anchor_left = 0.048611112
+anchor_top = 0.27006173
+anchor_right = 0.10270833
+anchor_bottom = 0.37218517
+offset_right = -0.3199997
+offset_bottom = -0.1760025
+metadata/_edit_use_anchors_ = true
+
+[node name="cat" type="TextureButton" parent="Cat_Holder" unique_id=1243155426]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("24_divm2")
 ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("25_sencb")
 
-[node name="cat_sfx" type="AudioStreamPlayer" parent="cat" unique_id=779481052]
+[node name="cat_sfx" type="AudioStreamPlayer" parent="Cat_Holder/cat" unique_id=779481052]
 stream = ExtResource("25_oh3iw")
 script = ExtResource("22_gys0y")
 minus_db = 3
 
-[node name="Timer" type="Timer" parent="cat" unique_id=1195471993]
+[node name="Timer" type="Timer" parent="Cat_Holder/cat" unique_id=1195471993]
 wait_time = 5.0
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="Motivationbar/MotivationButton" to="Motivationbar" method="_on_button_pressed"]
 [connection signal="pressed" from="Phone" to="Phone" method="_on_pressed"]
-[connection signal="pressed" from="Pen" to="Pen" method="_on_pressed"]
-[connection signal="pressed" from="cat" to="cat" method="_on_pressed"]
-[connection signal="resized" from="cat" to="cat" method="_on_resized"]
-[connection signal="timeout" from="cat/Timer" to="cat" method="_on_timer_timeout"]
+[connection signal="pressed" from="Pen_Holder/Pen" to="Pen_Holder/Pen" method="_on_pressed"]
+[connection signal="pressed" from="Cat_Holder/cat" to="Cat_Holder/cat" method="_on_pressed"]
+[connection signal="resized" from="Cat_Holder/cat" to="Cat_Holder/cat" method="_on_resized"]
+[connection signal="timeout" from="Cat_Holder/cat/Timer" to="Cat_Holder/cat" method="_on_timer_timeout"]

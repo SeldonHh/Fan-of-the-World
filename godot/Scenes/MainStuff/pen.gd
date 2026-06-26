@@ -1,5 +1,5 @@
 extends TextureButton
-@onready var bg: TextureRect = $"../BG"
+@onready var bg: TextureRect = %BG
 
 func _process(_delta: float) -> void:
 	self.modulate = bg.modulate

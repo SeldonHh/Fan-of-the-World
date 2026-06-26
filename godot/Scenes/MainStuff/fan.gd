@@ -75,7 +75,7 @@ func _process(_delta: float) -> void:
 		if Input.is_action_just_pressed("Debug"):
 			var temp = fanning_power
 			add_power(9998)
-			Global.motivation.add_motivation(0)
+			Global.motivation.add_motivation(500)
 			spin()
 			await get_tree().create_timer(spinning_time).timeout
 			fanning_power = temp 
@@ -113,7 +113,7 @@ func crit(amount):
 		label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 		self.add_child(label)
-		await get_tree().create_timer(5).timeout
+		await get_tree().create_timer(.5).timeout
 		label.queue_free()
 
 func start_constant_spin():
@@ -136,7 +136,8 @@ func start_constant_spin():
 				Global.lower_joules(fanning_power* crit_damage)
 			else:
 				Global.lower_joules(fanning_power)
-			Global.motivation.add_motivation(motivation_on_turn)
+			if !Global.stop_lowering_joules:
+				Global.motivation.add_motivation(motivation_on_turn)
 		fan_texture.texture = TEXTURES[texture_index]
 		await get_tree().create_timer(ANIM_IPS/speed_scale).timeout
 	constant_spin_running = false
