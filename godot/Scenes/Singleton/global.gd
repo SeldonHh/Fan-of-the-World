@@ -31,9 +31,12 @@ func _ready() -> void:
 		return
 	send_message("Tuto")
 
-func lower_joules(amount):
+func lower_joules(amount,no_end = false):
 	if !stop_lowering_joules:
-		joules = max(0,joules-amount)
+		if no_end:
+			joules = max(1,joules-amount)
+		else:
+			joules = max(0,joules-amount)
 		if joules <= 0:
 			end()
 		elif joules <= 8000:
@@ -51,6 +54,7 @@ func end():
 	phone.stop()
 	motivation.stop()
 	fan.stop()
+	book.disabled = true
 	send_message("The End")
 	var window_size = get_window().size
 	wheel.position = Vector2(window_size.x-window_size.x/20,window_size.y+50.0)

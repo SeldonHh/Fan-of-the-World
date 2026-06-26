@@ -56,7 +56,7 @@ func _on_button_1_pressed() -> void:
 	if able_to_answer:
 		if correct_answer[question_index] == 1:
 			Global.stop_lowering_joules = false
-			Global.lower_joules(joule_price[question_index])
+			Global.lower_joules(joule_price[question_index],true)
 			Global.stop_lowering_joules = true
 			correct.play()
 		else:
@@ -70,7 +70,7 @@ func _on_button_2_pressed() -> void:
 	if able_to_answer:
 		if correct_answer[question_index] == 2:
 			Global.stop_lowering_joules = false
-			Global.lower_joules(joule_price[question_index])
+			Global.lower_joules(joule_price[question_index],true)
 			Global.stop_lowering_joules = true
 			correct.play()
 		else:
@@ -84,7 +84,7 @@ func _on_button_3_pressed() -> void:
 	if able_to_answer:
 		if correct_answer[question_index] == 3:
 			Global.stop_lowering_joules = false
-			Global.lower_joules(joule_price[question_index])
+			Global.lower_joules(joule_price[question_index],true)
 			Global.stop_lowering_joules = true
 			correct.play()
 		else:
