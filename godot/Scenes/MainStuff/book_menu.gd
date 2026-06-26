@@ -63,7 +63,7 @@ func _on_button_1_pressed() -> void:
 			wrong.play()
 		able_to_answer = false
 		question_index += 1
-		if question_index > len(questions):
+		if question_index+1 > len(questions):
 			stop()
 
 func _on_button_2_pressed() -> void:
@@ -77,7 +77,7 @@ func _on_button_2_pressed() -> void:
 			wrong.play()
 		able_to_answer = false
 		question_index += 1
-		if question_index > len(questions):
+		if question_index+1 > len(questions):
 			stop()
 
 func _on_button_3_pressed() -> void:
@@ -91,7 +91,7 @@ func _on_button_3_pressed() -> void:
 			wrong.play()
 		able_to_answer = false
 		question_index += 1
-		if question_index > len(questions):
+		if question_index+1 > len(questions):
 			stop()
 
 func stop():
@@ -100,3 +100,7 @@ func stop():
 	button_2.disabled = true
 	button_3.disabled = true
 	question.text = "You answered all the questions"
+	button_1.hide()
+	button_2.hide()
+	button_3.hide()
+	price.hide()
